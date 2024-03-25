@@ -19,7 +19,7 @@ export const MainPage = () => {
     <div className="main-page">
       <div className="group">
         
-        <div className="text-wrapper">Easy Course Scheduling</div>
+        <div className="text-wrapper">Easy Course Schedulings</div>
         <button onClick={goToCal} >new button!</button>
         <img src={MainImage} className="main-image"/>
 
