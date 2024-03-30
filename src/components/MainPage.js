@@ -1,6 +1,7 @@
 import React from "react";
 import google from "../images/google-logo.svg"
 import MainImage from '../images/si.jpg';
+import sbulogo from '../images/sbu.jpg';
 import "../css/MainPage.css";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
@@ -18,9 +19,12 @@ export const MainPage = () => {
   return (
     <div className="main-page">
       <div className="group">
+
+      {/* <img src={sbulogo} className=""/> */}
         
         <div className="text-wrapper">Easy Course Schedulings</div>
         <button onClick={goToCal} >new button!</button>
+
         <img src={MainImage} className="main-image"/>
 
         <button className="button"onClick={goToPref}>
