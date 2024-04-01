@@ -8,7 +8,7 @@ export const Preference = () => {
       <div className="group">
         
         <div className="text-wrapper">Preference</div>
-        <img src={prefimg} className="pref-image"/>
+        {/* <img src={prefimg} className="pref-image"/> */}
 
       </div>
     </div>
