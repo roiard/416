@@ -1,4 +1,5 @@
 from flask import Flask, request, redirect, jsonify
+from flask_cors import CORS
 import pandas as pd
 from werkzeug.utils import secure_filename
 import os
@@ -9,6 +10,7 @@ from datetime import datetime, timedelta
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './'
 processed_data = [] 
+cors = CORS(app)
 
 # remove this part after fetching index.html page
 @app.route('/')
@@ -94,4 +96,5 @@ def get_data():
     return jsonify(processed_data)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
+
