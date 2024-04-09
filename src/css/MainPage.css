@@ -1,82 +1,127 @@
 .main-page {
-    background-color: #ffffff;
-    overflow: hidden;
-    width: 100vw; 
-    margin: 0 auto;
-  }
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 100vw; 
+  height: 100vh;
+  margin: 0;
+}
 
-  .group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  /* 메인 제목  */
-
-  .main-page .text-wrapper {
-    color: #000000;
-    font-family: "Questrial-Regular", Helvetica;
-    font-size: 50px;
-    font-weight: 400;
-    letter-spacing: -1.28px;
-    line-height: 76.8px;
-    position: absolute;
-    text-align: center;
-    white-space: nowrap;
-    left: 0;
-    right: 0;
-    top:5%
-  }
-
-  /* 메인 이미지  */
-
-  .main-page .main-image {
-    margin-top: 8%;
-    height: 70vh;
-    width: 150vh;
-    /* position: absolute; */
-  }
+.group {
+  top : 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #fbf5f5;
+  height: 150vh;
+}
 
 
-  /* 메인 로그인 버튼  */
+/* SBU LOGO  */
+.main-page .sbulogo {
+  position: absolute;
+  top : 1.5%;
+  left: 2%;             
+  height: auto;        
+  width: auto;        
+  max-height: 100px;
+  max-width: 200px; 
+}
 
-  .main-page .button {
-    all: unset;
-    background-color: #3d58e5;
-    border-radius: 8px;
-    box-sizing: border-box;
-    height: 64px;
-    overflow: hidden;
-    position: absolute;
-    width: 227px;
 
-    top: 700px;
-    left: 0;
-    right: 0;
-    bottom: 80px;
-    margin: auto;
-  }
+/* 메인 제목  */
+.main-page .text-wrapper {
+  position: absolute;
+  font-family: "Questrial-Regular", Helvetica;
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: -1.28px;
+  line-height: 76.8px;
+  position: absolute;
+  text-align: center;
+  white-space: nowrap;
+  left: 0;
+  right: 0;
+  top:4%
+}
 
-  .main-page .div {
-    color: #ffffff;
-    font-family: "Inter-SemiBold", Helvetica;
-    font-size: 20px;
-    font-weight: 600;
-    height: 26px;
-    left: 64px;
-    letter-spacing: 0;
-    line-height: 26px;
-    position: absolute;
-    top: 18px;
-    white-space: nowrap;
-  }
+
+/* 메인 이미지  */
+.main-page .main-image {
+  margin-top: 6%;
+  height: 72vh;
+  width: 150vh;
+  border-radius: 8px;
+}
+
+
+/* 메인 로그인 버튼  */
+.main-page .login-button {
+  all: unset;
+  background-color: #3554ee;
+  border-radius: 8px;
+  box-sizing: border-box;
+  height: 64px;
+  overflow: hidden;
+  position: absolute;
+  width: 227px;
+  top: 90%;
+  left: 500px;
+  right: 0;
+  bottom: 80px;
+  margin: auto;
+}
+
+
+.main-page .button-text {
+  color: #ffffff;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  height: 26px;
+  left: 64px;
+  letter-spacing: 0;
+  line-height: 26px;
+  position: absolute;
+  top: 18px;
+  white-space: nowrap;
+}
   
-  .main-page .element-logo-google {
-    height: 63px;
-    left: 1px;
-    object-fit: cover;
-    position: absolute;
-    top: 1px;
-    width: 63px;
-  }
+.main-page .element-logo-google {
+  height: 63px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 63px;
+}
   
+
+/* TimeTable 버튼  */
+.main-page .timetable-button {
+  background-color: #3554ee;
+  border-radius: 8px;
+  box-sizing: border-box;
+  height: 64px;
+  overflow: hidden;
+  position: absolute;
+  width: 227px;
+  top: 90%;
+  left: -500px;
+  right: 0;
+  bottom: 80px;
+  margin: auto;
+}
+
+.main-page .table-button-text {
+  color: #ffffff;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  height: 26px;
+  left: 35px;
+  letter-spacing: 0;
+  line-height: 26px;
+  position: absolute;
+  top: 18px;
+  white-space: nowrap;
+}

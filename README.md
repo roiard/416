@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+To run 
+
+-- pip3 install flask
+
+-- pip3 install --update
+
+-- python3 -m pip install flask
+
+-- python3 -m pip install openpyxl
+
+
