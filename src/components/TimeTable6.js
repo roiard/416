@@ -7,7 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import sbulogo from '../images/sbu.jpg';
 import "../css/TimeTable.css";
 
-export const TimeTable1 = () => {
+export const TimeTable6 = () => {
     const navigate = useNavigate();
 
     const goToMain = () => {
@@ -31,31 +31,25 @@ export const TimeTable1 = () => {
     const goToTSM = () => {
         navigate('/TimeTable6');
     };
-    const goToList = () => {
-      navigate('/List');
-  };
 
     return (
         <div className="container">
-            <img src={sbulogo} className="sbulogo" />
+            <img src={sbulogo} className="sbulogo"/>
             <div className="w-95 w-md-75 w-lg-60 w-xl-55 mx-auto mb-6 text-center ">
                 <Nav className="justify-content-end" activeKey="/home">
                     <Nav.Item>
                         <Nav.Link onClick={goToMain}>Home</Nav.Link>
                     </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link onClick={goToList}>List</Nav.Link>
-                    </Nav.Item>
                     <NavDropdown title="Select Department" id="nav-dropdown">
-                        <NavDropdown.Item onClick={goToAMS}>AMS</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToBM}>BM</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToCS}>CS</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToECE}>ECE</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToMEC}>MEC</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToTSM}>TSM</NavDropdown.Item>
+                            <NavDropdown.Item onClick={goToAMS}>AMS</NavDropdown.Item>
+                            <NavDropdown.Item onClick={goToBM}>BM</NavDropdown.Item>
+                            <NavDropdown.Item onClick={goToCS}>CS</NavDropdown.Item>
+                            <NavDropdown.Item onClick={goToECE}>ECE</NavDropdown.Item>
+                            <NavDropdown.Item onClick={goToMEC}>MEC</NavDropdown.Item>
+                            <NavDropdown.Item onClick={goToTSM}>TSM</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
-                <h2 className="display-18 display-md-16 display-lg-14 mb-0">Time Table (AMS)</h2>
+                <h2 className="display-18 display-md-16 display-lg-14 mb-0">Time Table (TSM)</h2>
             </div>
             <div className="row">
                 <div className="col-md-12" style={{ marginTop: '1%' }}>
@@ -75,17 +69,17 @@ export const TimeTable1 = () => {
                                 <tr>
                                     <td className="day">09:00 - 10:20</td>
                                     <td className="active">
-                                        <h4>AMS 10111</h4>
+                                        <h4>TSM 10111</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
                                             <Row className="justify-content-md-center">
                                                 <Col xs={12} md={4}>
-                                                    <h4>AMS 101</h4>
+                                                    <h4>TSM 101</h4>
                                                     <p>Francois Rameu</p>
                                                     <span>Room Number</span>
                                                 </Col>
                                                 <Col xs={12} md={4}>
-                                                    <h4>AMS 101</h4>
+                                                    <h4>TSM 101</h4>
                                                     <p>Francois Rameu</p>
                                                     <span>Room Number</span>
                                                 </Col>
@@ -94,19 +88,19 @@ export const TimeTable1 = () => {
                                     </td>
                                     <td></td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
                                     </td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
@@ -116,7 +110,7 @@ export const TimeTable1 = () => {
                                 <tr>
                                     <td className="day">10:30 - 11:50</td>
                                     <td className="active">
-                                        <h4>AMS 114</h4>
+                                        <h4>TSM 114</h4>
                                         <p>Antonino Mione</p>
                                         <div className="hover">
                                             <h4>Cycling</h4>
@@ -125,29 +119,29 @@ export const TimeTable1 = () => {
                                         </div>
                                     </td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
                                     </td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
                                     </td>
                                     <td></td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
@@ -156,10 +150,10 @@ export const TimeTable1 = () => {
                                 <tr>
                                     <td className="day">12:30 - 01:50</td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
@@ -167,19 +161,19 @@ export const TimeTable1 = () => {
                                     <td></td>
                                     <td></td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
                                     </td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
@@ -188,30 +182,30 @@ export const TimeTable1 = () => {
                                 <tr>
                                     <td className="day">02:00 - 03:20</td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
                                     </td>
                                     <td></td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
                                     </td>
                                     <td></td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
@@ -221,20 +215,20 @@ export const TimeTable1 = () => {
                                     <td className="day">03:30 - 04:50</td>
                                     <td></td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
                                     </td>
                                     <td></td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
@@ -244,30 +238,30 @@ export const TimeTable1 = () => {
                                 <tr>
                                     <td className="day">05:00 - 06:20</td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
                                     </td>
                                     <td></td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
                                     </td>
                                     <td></td>
                                     <td className="active">
-                                        <h4>AMS 101</h4>
+                                        <h4>TSM 101</h4>
                                         <p>Francois Rameu</p>
                                         <div className="hover">
-                                            <h4>AMS 101</h4>
+                                            <h4>TSM 101</h4>
                                             <p>Francois Rameu</p>
                                             <span>Room Number</span>
                                         </div>
@@ -282,4 +276,4 @@ export const TimeTable1 = () => {
     );
 };
 
-export default TimeTable1;
+export default TimeTable6;

@@ -9,6 +9,11 @@ import Preference from './components/Preference';
 import Calendar from './components/Calendar';
 import TimeTable1 from './components/TimeTable1';
 import TimeTable2 from './components/TimeTable2';
+import TimeTable3 from './components/TimeTable3';
+import TimeTable4 from './components/TimeTable4';
+import TimeTable5 from './components/TimeTable5';
+import TimeTable6 from './components/TimeTable6';
+import List from './components/List';
 import Login from './components/Login';
 import Profile from './components/Profile';
 
@@ -23,6 +28,11 @@ root.render(
         <Route path="/Calendar" element={<Calendar />} />
         <Route path="/TimeTable1" element={<TimeTable1 />} />
         <Route path="/TimeTable2" element={<TimeTable2 />} />
+        <Route path="/TimeTable3" element={<TimeTable3 />} />
+        <Route path="/TimeTable4" element={<TimeTable4 />} />
+        <Route path="/TimeTable5" element={<TimeTable5 />} />
+        <Route path="/TimeTable6" element={<TimeTable6 />} />
+        <Route path="/List" element={<List />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Profile" element={<Profile />} />
       </Routes>

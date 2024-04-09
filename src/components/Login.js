@@ -7,6 +7,9 @@ export const Login = () => {
     const goToTT1 = () => {
         navigate('/TimeTable1');
       };
+      const goToProfile = () => {
+        navigate('/Profile');
+      };
     return (
         <div id="main-wrapper" class="container">
     <div class="row justify-content-center">
@@ -32,7 +35,7 @@ export const Login = () => {
                                         <label for="exampleInputPassword1">Password</label>
                                         <input type="password" class="form-control" id="exampleInputPassword1"></input>
                                     </div>
-                                    <button type="submit" class="btn btn-theme">Login</button>
+                                    <button type="submit" class="btn btn-theme" onClick={goToProfile} >Login</button>
                                     <a href="#l" class="forgot-link float-right text-primary">Forgot password?</a>
                                 </form>
                             </div>

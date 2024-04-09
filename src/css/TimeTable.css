@@ -1,3 +1,19 @@
+/* SBU LOGO  */
+.sbulogo {
+  position: absolute;
+  top : 1.5%;
+  left: 2%;             
+  height: auto;        
+  width: auto;        
+  max-height: 100px;
+  max-width: 200px; 
+}
+
+#dropdown-basic {
+  background-color: #86d4f5;
+  margin: 0%;
+}
+
 .wide-container {
   max-width: 120%; /* or 100vw if you want it to span the full width of the viewport */
   margin: 0 auto; /* Center it */

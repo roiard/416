@@ -89,7 +89,7 @@ export const Profile = () => {
                                             <label class="custom-control-label" for="subscribe_me">Remember Me</label>
                                     </div>
                                     {/* <button class="btn btn-style-1 btn-primary" type="button" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Login</button> */}
-                                    <button class="btn btn-style-1 btn-primary" type="button" onClick={goToTT1}>Login</button>
+                                    <button class="btn btn-style-1 btn-primary" type="button" onClick={goToTT1}>Make Schedule</button>
                                 </div>
                         </div>
                     </form>

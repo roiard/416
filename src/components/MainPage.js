@@ -8,6 +8,11 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate
 export const MainPage = () => {
     const navigate = useNavigate();
 
+    const goToList = () => {
+      navigate('//127.0.0.1:5000/courses');
+    };
+    // http://127.0.0.1:5000/courses
+
     const goToPref = () => {
       navigate('/Preference');
     };
@@ -25,7 +30,7 @@ export const MainPage = () => {
     };
 
     const goToLogin = () => {
-      navigate('/LoginPage');
+      navigate('/Login');
     };
 
     const goToProfile = () => {
@@ -45,6 +50,10 @@ export const MainPage = () => {
         <button className="timetable-button" onClick={goToTT1}>
           <div className="table-button-text">Make Time Table</div>
         </button>
+
+        {/* <button className="timetable-button" onClick={goToList}>
+          <div className="table-button-text">Make Time Tablelistlistlistlist</div>
+        </button> */}
 
         <button className="login-button" onClick={goToLogin}>
           <div className="button-text">Google Sign in</div>
