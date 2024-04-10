@@ -22,11 +22,20 @@ export const List = () => {
 
     return (
         <div>
-            <h2>CRS Values1</h2>
+            <h2>CRS Values</h2>
             <ul>
                 {courses.map((course, index) => (
                     <li key={index}>
+                        {course.Subj}
                         {course.CRS}
+                        {'-    -'}
+                        {course.Days}
+                        {'-    -'}
+                        {course['Start Time']}
+                        {'-    -'}  
+                        {course.Instructor}
+                        {'-    -'}  
+                        {course.Room}
                     </li>
                 ))}
             </ul>

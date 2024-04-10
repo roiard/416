@@ -48,12 +48,8 @@ export const MainPage = () => {
         <img src={MainImage} className="main-image"/>
 
         <button className="timetable-button" onClick={goToTT1}>
-          <div className="table-button-text">Make Time Table</div>
+          <div className="table-button-text">Show Time Table </div>
         </button>
-
-        {/* <button className="timetable-button" onClick={goToList}>
-          <div className="table-button-text">Make Time Tablelistlistlistlist</div>
-        </button> */}
 
         <button className="login-button" onClick={goToLogin}>
           <div className="button-text">Google Sign in</div>
