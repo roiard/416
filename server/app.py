@@ -41,7 +41,7 @@ def upload_file():
 
 def process_and_store_data(path):
     # Read CSV and process data
-    df = pd.read_excel(path, sheet_name=2)
+    df = pd.read_excel(path, sheet_name=1)
 
     # remove here after making real web
     df.fillna(method='ffill', inplace=True)
@@ -88,6 +88,23 @@ def calculate_end_time(row):
 
     return end_time_str
 
+@app.route('/check-and-process', methods=['GET'])
+def check_and_process_file():
+    
+    department = request.args.get('department')
+    year = request.args.get('year')
+    semester = request.args.get('semester')
+    
+    # file path 
+    filename = f'course_{year}_{semester}_{department}.xlsx' 
+    filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    
+    # find file exits or not
+    if os.path.isfile(filepath):
+        process_and_store_data(filepath)
+        return jsonify({'message': 'File exists and processed', 'data': processed_data})
+    else:
+        return jsonify({'message': 'File does not exist', 'data': []})
 
 
 @app.route('/courses', methods=['GET'])

@@ -8,7 +8,7 @@ import "../css/TimeTable.css";
 export const TimeTable1 = () => {
 
     const [courses, setCourses] = useState([]);
-
+    
     useEffect(() => {
         const fetchCourses = async () => {
             try {
