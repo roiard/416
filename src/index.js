@@ -13,6 +13,7 @@ import TimeTable3 from './components/TimeTable3';
 import TimeTable4 from './components/TimeTable4';
 import TimeTable5 from './components/TimeTable5';
 import TimeTable6 from './components/TimeTable6';
+import AdminTable from './components/AdminTable';
 import List from './components/List';
 import Login from './components/Login';
 import Profile from './components/Profile';
@@ -32,6 +33,7 @@ root.render(
         <Route path="/TimeTable4" element={<TimeTable4 />} />
         <Route path="/TimeTable5" element={<TimeTable5 />} />
         <Route path="/TimeTable6" element={<TimeTable6 />} />
+        <Route path="/AdminTable" element={<AdminTable />} />
         <Route path="/List" element={<List />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Profile" element={<Profile />} />

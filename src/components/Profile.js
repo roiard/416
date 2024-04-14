@@ -4,8 +4,8 @@ import "../css/Profile.css";
 
 export const Profile = () => {
     const navigate = useNavigate();
-    const goToTT1 = () => {
-        navigate('/TimeTable1');
+    const goToAT = () => {
+        navigate('/AdminTable');
       };
     return (
         <div class="container mt-5">
@@ -24,21 +24,6 @@ export const Profile = () => {
                     <div class="wizard">
                         <nav class="list-group list-group-flush">
                             <a class="list-group-item active" href="#"><i class="fe-icon-user text-muted"></i>Profile Settings</a>
-                            {/* <a class="list-group-item" href="#"><i class="fe-icon-map-pin text-muted"></i>Addresses</a> */}
-                            {/* <a class="list-group-item" href="https://www.bootdey.com/snippets/view/bs4-wishlist-profile-page" target="__blank">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div><i class="fe-icon-heart mr-1 text-muted"></i>
-                                        <div class="d-inline-block font-weight-medium text-uppercase">My Wishlist</div>
-                                    </div><span class="badge badge-secondary">3</span>
-                                </div>
-                            </a> */}
-                            {/* <a class="list-group-item" href="https://www.bootdey.com/snippets/view/bs4-account-tickets" target="__blank">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div><i class="fe-icon-tag mr-1 text-muted"></i>
-                                        <div class="d-inline-block font-weight-medium text-uppercase">My Tickets</div>
-                                    </div><span class="badge badge-secondary">4</span>
-                                </div>
-                            </a> */}
                         </nav>
                     </div>
                 </div>
@@ -63,12 +48,6 @@ export const Profile = () => {
                                 <input class="form-control" type="email" id="account-email" placeholder="cs.professor@sbu.com" disabled=""></input>
                             </div>
                         </div>
-                        {/* <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="account-phone">Department</label>
-                                <input class="form-control" type="text" id="account-phone" placeholder="+7 (805) 348 95 72" required=""></input>
-                            </div>
-                        </div> */}
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="account-pass">New Password</label>
@@ -89,7 +68,7 @@ export const Profile = () => {
                                             <label class="custom-control-label" for="subscribe_me">Remember Me</label>
                                     </div>
                                     {/* <button class="btn btn-style-1 btn-primary" type="button" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Login</button> */}
-                                    <button class="btn btn-style-1 btn-primary" type="button" onClick={goToTT1}>Make Schedule</button>
+                                    <button class="btn btn-style-1 btn-primary" type="button" onClick={goToAT}>Admin Schedule</button>
                                 </div>
                         </div>
                     </form>
