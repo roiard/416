@@ -3,38 +3,17 @@ import google from "../images/google-logo.svg"
 import MainImage from '../images/timetable.png';
 import sbulogo from '../images/sbu.jpg';
 import "../css/MainPage.css";
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 
 export const MainPage = () => {
     const navigate = useNavigate();
-
-    const goToList = () => {
-      navigate('//127.0.0.1:5000/courses');
-    };
-    // http://127.0.0.1:5000/courses
-
-    const goToPref = () => {
-      navigate('/Preference');
-    };
-
-    const goToCal = () => {
-      navigate('/Calendar');
-    };
 
     const goToTT1 = () => {
       navigate('/TimeTable1');
     };
 
-    const goToTT2 = () => {
-      navigate('/TimeTable2');
-    };
-
     const goToLogin = () => {
       navigate('/Login');
-    };
-
-    const goToProfile = () => {
-      navigate('/Profile');
     };
 
   return (

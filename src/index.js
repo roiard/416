@@ -14,6 +14,13 @@ import TimeTable4 from './components/TimeTable4';
 import TimeTable5 from './components/TimeTable5';
 import TimeTable6 from './components/TimeTable6';
 import AdminTable from './components/AdminTable';
+
+import Table24S from './components/pastTable/24S';
+import Table23F from './components/pastTable/23F';
+import Table23S from './components/pastTable/23S';
+import Table22F from './components/pastTable/22F';
+import Table22S from './components/pastTable/22S';
+
 import List from './components/List';
 import Login from './components/Login';
 import Profile from './components/Profile';
@@ -23,7 +30,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes> {/* Define your routes here */}
+      <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/Preference" element={<Preference />} />
         <Route path="/Calendar" element={<Calendar />} />
@@ -34,6 +41,13 @@ root.render(
         <Route path="/TimeTable5" element={<TimeTable5 />} />
         <Route path="/TimeTable6" element={<TimeTable6 />} />
         <Route path="/AdminTable" element={<AdminTable />} />
+
+        <Route path="/Table24S" element={<Table24S />} />
+        <Route path="/Table23F" element={<Table23F />} />
+        <Route path="/Table23S" element={<Table23S />} />
+        <Route path="/Table22F" element={<Table22F />} />
+        <Route path="/Table22S" element={<Table22S />} />
+
         <Route path="/List" element={<List />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Profile" element={<Profile />} />

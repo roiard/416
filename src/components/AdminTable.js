@@ -54,6 +54,24 @@ export const TimeTable1 = () => {
     const goToCSV = () => {
         window.location.href = 'http://127.0.0.1:5000';
     };
+    const goTo24F = () => {
+        navigate('/AdminTable');
+    };
+    const goTo24S = () => {
+        navigate('/Table24S');
+    };
+    const goTo23F = () => {
+        navigate('/Table23F');
+    };
+    const goTo23S = () => {
+        navigate('/Table23S');
+    };
+    const goTo22F = () => {
+        navigate('/Table22F');
+    };
+    const goTo22S = () => {
+        navigate('/Table22S');
+    };
 
     return (
         <div className="container">
@@ -78,15 +96,15 @@ export const TimeTable1 = () => {
                         <NavDropdown.Item onClick={goToTSM}>TSM</NavDropdown.Item>
                     </NavDropdown>
                     <NavDropdown title="Semester" id="nav-dropdown">
-                        <NavDropdown.Item onClick={goToAMS}>2024F</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToBM}>2024S</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToCS}>2023F</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToECE}>2023S</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToMEC}>2022F</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToTSM}>2022S</NavDropdown.Item>
+                        <NavDropdown.Item onClick={goTo24F}>2024F</NavDropdown.Item>
+                        <NavDropdown.Item onClick={goTo24S}>2024S</NavDropdown.Item>
+                        <NavDropdown.Item onClick={goTo23F}>2023F</NavDropdown.Item>
+                        <NavDropdown.Item onClick={goTo23S}>2023S</NavDropdown.Item>
+                        <NavDropdown.Item onClick={goTo22F}>2022F</NavDropdown.Item>
+                        <NavDropdown.Item onClick={goTo22S}>2022S</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
-                <h2 className="display-18 display-md-16 display-lg-14 mb-0">Admin Time Table!!! (AMS)</h2>
+                <h2 className="display-18 display-md-16 display-lg-14 mb-0">24F Admin Time Table!!! (AMS)</h2>
             </div>
             <div className="row">
                 <div className="col-md-12" style={{ marginTop: '1.5%' }}>
