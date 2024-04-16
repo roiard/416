@@ -9,10 +9,11 @@ import "../css/TimeTable.css";
 export const TimeTable1 = () => {
 
     const [department, setDepartment] = useState('AMS');
-    const [year, setYear] = useState('22');
+    const [year, setYear] = useState('24');
     const [semester, setSemester] = useState('F');
     const [courses, setCourses] = useState([]);
     const [message, setMessage] = useState('');
+    const [fileFound, setFileFound] = useState(false);
     
     useEffect(() => {
         // const fetchCourses = async () => {
@@ -50,12 +51,15 @@ export const TimeTable1 = () => {
             const response = await fetch(url);
 
             if (!response.ok) {
+                setCourses([])
+                setFileFound(false);
                 throw new Error('Network response was not ok');
             }
 
             const data = await response.json();
             setCourses(data.data);
             setMessage(data.message);
+            setFileFound(true);
             console.log('Data:', data.data); 
             console.log(data.message)
             console.log(semester)
@@ -71,28 +75,60 @@ export const TimeTable1 = () => {
         navigate('/');
     };
     const goToAMS = () => {
-        navigate('/TimeTable1');
+        // navigate('/TimeTable1');
+        setDepartment('AMS')
     };
     const goToBM = () => {
-        navigate('/TimeTable2');
+        // navigate('/TimeTable2');
+        setDepartment('BM')
     };
     const goToCS = () => {
-        navigate('/TimeTable3');
+        // navigate('/TimeTable3');
+        setDepartment('CSE')
     };
     const goToECE = () => {
-        navigate('/TimeTable4');
+        // navigate('/TimeTable4');
+        setDepartment('ECE')
     };
     const goToMEC = () => {
-        navigate('/TimeTable5');
+        // navigate('/TimeTable5');
+        setDepartment('MEC')
     };
     const goToTSM = () => {
-        navigate('/TimeTable6');
+        // navigate('/TimeTable6');
+        setDepartment('TSM')
     };
+    const goToFSC = () => {
+        setDepartment('FSC')
+    }
+
     const goToList = () => {
         navigate('/List');
     };
+    const goTo24F = () => {
+        // navigate('/Table24F');
+        setYear('24')
+        setSemester('F')
+    };
     const goTo24S = () => {
-        navigate('/Table24S');
+        // navigate('/Table24S');
+        setYear('24')
+        setSemester('S')
+    };
+    const goTo23F = () => {
+        // navigate('/Table24S');
+        setYear('23')
+        setSemester('F')
+    };
+    const goTo23S = () => {
+        // navigate('/Table24S');
+        setYear('23')
+        setSemester('S')
+    };
+    const goTo22F = () => {
+        // navigate('/Table24S');
+        setYear('22')
+        setSemester('F')
     };
 
     return (
@@ -113,17 +149,17 @@ export const TimeTable1 = () => {
                         <NavDropdown.Item onClick={goToECE}>ECE</NavDropdown.Item>
                         <NavDropdown.Item onClick={goToMEC}>MEC</NavDropdown.Item>
                         <NavDropdown.Item onClick={goToTSM}>TSM</NavDropdown.Item>
+                        <NavDropdown.Item onClick={goToFSC}>FSC</NavDropdown.Item>
                     </NavDropdown>
                     <NavDropdown title="Semester" id="nav-dropdown">
-                        <NavDropdown.Item onClick={goToAMS}>2024F</NavDropdown.Item>
+                        <NavDropdown.Item onClick={goTo24F}>2024F</NavDropdown.Item>
                         <NavDropdown.Item onClick={goTo24S}>2024S</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToCS}>2023F</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToECE}>2023S</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToMEC}>2022F</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToTSM}>2022S</NavDropdown.Item>
+                        <NavDropdown.Item onClick={goTo23F}>2023F</NavDropdown.Item>
+                        <NavDropdown.Item onClick={goTo23S}>2023S</NavDropdown.Item>
+                        <NavDropdown.Item onClick={goTo22F}>2022F</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
-                <h2 className="display-18 display-md-16 display-lg-14 mb-0">Time Table ({department})</h2>
+                <h2 className="display-18 display-md-16 display-lg-14 mb-0">Time Table {!fileFound && " Not Updated"} ({department}) ({year}{semester})</h2>
             </div>
             <div className="row">
                 <div className="col-md-12" style={{ marginTop: '1.5%' }}>
