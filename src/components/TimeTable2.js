@@ -9,6 +9,7 @@ export const TimeTable2 = () => {
 
     const [courses, setCourses] = useState([]);
 
+    
     useEffect(() => {
         const fetchCourses = async () => {
             try {
@@ -24,6 +25,7 @@ export const TimeTable2 = () => {
         };
         fetchCourses();
     }, []);
+
 
     const navigate = useNavigate();
 

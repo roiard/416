@@ -1,11 +1,12 @@
 from flask import Flask, request, redirect, jsonify
-from flask_cors import CORS
+from flask_cors import CORS,cross_origin
 import pandas as pd
 from werkzeug.utils import secure_filename
 import os
 import numpy as np
 from random import randint
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
+import logging
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './'
@@ -41,11 +42,12 @@ def upload_file():
 
 def process_and_store_data(path):
     # Read CSV and process data
-    df = pd.read_excel(path, sheet_name=1)
+    df = pd.read_excel(path, sheet_name=0)
 
     # remove here after making real web
     df.fillna(method='ffill', inplace=True)
-    df['Total time'] = ((pd.to_datetime(df['End Time']) - pd.to_datetime(df['Start Time']))).dt.total_seconds() / 60
+    df['Total time'] = ((pd.to_datetime(df['End Time'].astype('string')) - pd.to_datetime(df['Start Time'].astype('string')))).dt.total_seconds() / 60
+   
     df['Start Time'], df['End Time'] = None, None
     df = df[df['Total time'] >0]
     # remove here after making real web
@@ -89,23 +91,37 @@ def calculate_end_time(row):
     return end_time_str
 
 @app.route('/check-and-process', methods=['GET'])
+@cross_origin(origin='localhost', headers=['Content- Type', 'Authorization'])
 def check_and_process_file():
     
     department = request.args.get('department')
     year = request.args.get('year')
     semester = request.args.get('semester')
-    
-    # file path 
-    filename = f'course_{year}_{semester}_{department}.xlsx' 
-    filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-    
-    # find file exits or not
-    if os.path.isfile(filepath):
-        process_and_store_data(filepath)
-        return jsonify({'message': 'File exists and processed', 'data': processed_data})
-    else:
-        return jsonify({'message': 'File does not exist', 'data': []})
 
+    # Log the incoming request
+    logging.info(f"Processing file for {department}, Year: {year}, Semester: {semester}")
+
+    # Construct file path
+    filename = f'course_{year}_{semester}_{department}.xlsx'
+    filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
+    
+    # Check if file exists
+    if os.path.isfile(filepath):
+        try:
+            process_and_store_data(filepath)
+            return jsonify({'message': 'File exists and processed', 'data': processed_data})
+        except Exception as e:
+            logging.error(f"Error processing file: {e}")
+            return jsonify({'message': 'Error processing file', 'error': str(e)}), 500
+    else:
+        return jsonify({
+            'message': 'File does not exista',
+            'department': department,
+            'year': year,
+            'semester': semester,
+            'filepath': filepath,
+            'data': []
+        }), 404
 
 @app.route('/courses', methods=['GET'])
 def get_data():
@@ -113,5 +129,5 @@ def get_data():
     return jsonify(processed_data)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
 

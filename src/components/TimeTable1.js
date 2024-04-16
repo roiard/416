@@ -4,26 +4,66 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import sbulogo from '../images/sbu.jpg';
 import "../css/TimeTable.css";
+// import axios from 'axios';
 
 export const TimeTable1 = () => {
 
+    const [department, setDepartment] = useState('AMS');
+    const [year, setYear] = useState('22');
+    const [semester, setSemester] = useState('F');
     const [courses, setCourses] = useState([]);
+    const [message, setMessage] = useState('');
     
     useEffect(() => {
-        const fetchCourses = async () => {
-            try {
-                const response = await fetch('http://127.0.0.1:5000/courses');
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data = await response.json();
-                setCourses(data);
-            } catch (error) {
-                console.error("There was an error fetching the courses data: ", error);
+        // const fetchCourses = async () => {
+        //     try {
+        //         const response = await fetch('http://127.0.0.1:5000/courses');
+        //         if (!response.ok) {
+        //             throw new Error('Network response was not ok');
+        //         }
+        //         const data = await response.json();
+        //         setCourses(data);
+        //     } catch (error) {
+        //         console.error("There was an error fetching the courses data: ", error);
+        //     }
+        // };
+        // fetchCourses();
+        handleCheckAndProcess();
+    }, [semester, year, department]);
+
+    // const change_ams = () => {
+    //     setDepartment('AMS')
+    // }
+
+    // const change_semester = () => {
+    //     setSemester('F')
+    // }
+
+    // const change_year = () => {
+    //     setYear('22')
+    // }
+
+    const handleCheckAndProcess = async () => {
+
+        const url = 'http://localhost:5000/check-and-process?department=' + department + '&year=' + year + '&semester=' + semester
+        try {
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
-        };
-        fetchCourses();
-    }, []);
+
+            const data = await response.json();
+            setCourses(data.data);
+            setMessage(data.message);
+            console.log('Data:', data.data); 
+            console.log(data.message)
+            console.log(semester)
+        } catch (error) {
+            console.error('Error:', error);
+            setMessage('Error fetching data');
+        }
+    };
 
     const navigate = useNavigate();
 
@@ -83,7 +123,7 @@ export const TimeTable1 = () => {
                         <NavDropdown.Item onClick={goToTSM}>2022S</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
-                <h2 className="display-18 display-md-16 display-lg-14 mb-0">Time Table (AMS)</h2>
+                <h2 className="display-18 display-md-16 display-lg-14 mb-0">Time Table ({department})</h2>
             </div>
             <div className="row">
                 <div className="col-md-12" style={{ marginTop: '1.5%' }}>
