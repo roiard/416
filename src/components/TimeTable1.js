@@ -48,10 +48,7 @@ export const TimeTable1 = () => {
 
         const url = 'http://localhost:5000/check-and-process?department=' + department + '&year=' + year + '&semester=' + semester
         try {
-            const response = await fetch(url, {
-                method: 'GET',
-                mode: 'no-cors',
-            });
+            const response = await fetch(url);
 
             if (!response.ok) {
                 setCourses([])
@@ -148,9 +145,9 @@ export const TimeTable1 = () => {
                     <Nav.Item>
                         <Nav.Link onClick={goToList}>List</Nav.Link>
                     </Nav.Item>
-                    <Nav.Item>
+                    {(year=='24')&&(semester=='F')&&(<Nav.Item>
                         <Nav.Link onClick={goToCSV}>Input CSV</Nav.Link>
-                    </Nav.Item>
+                    </Nav.Item>)}
                     <NavDropdown title="Department" id="nav-dropdown">
                         <NavDropdown.Item onClick={goToAMS}>AMS</NavDropdown.Item>
                         <NavDropdown.Item onClick={goToBM}>BM</NavDropdown.Item>
