@@ -39,6 +39,15 @@ def upload_file():
         file.save(filepath)
         process_and_store_data(filepath)
         return "File uploaded and processed. Use /courses to retrieve."
+def show_data(path):
+    # Read CSV and process data
+    df = pd.read_excel(path, sheet_name=0)
+
+    df.fillna(method='ffill', inplace=True)
+    df['End Time'] = pd.to_datetime(df['End Time'].astype('string')).dt.strftime('%I:%M %p').str.lstrip('0')
+    df['Start Time'] = pd.to_datetime(df['Start Time'].astype('string')).dt.strftime('%I:%M %p').str.lstrip('0')
+    global processed_data
+    processed_data = df.to_dict(orient='records')
 
 def process_and_store_data(path):
     # Read CSV and process data
@@ -108,7 +117,11 @@ def check_and_process_file():
     # Check if file exists
     if os.path.isfile(filepath):
         try:
-            process_and_store_data(filepath)
+            if (year == '24') and (semester == 'F'):
+                process_and_store_data(filepath)
+            else:
+                show_data(filepath)
+
             return jsonify({'message': 'File exists and processed', 'data': processed_data})
         except Exception as e:
             logging.error(f"Error processing file: {e}")
