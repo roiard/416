@@ -24,6 +24,7 @@ import Table22S from './components/pastTable/22S';
 import List from './components/List';
 import Login from './components/Login';
 import Profile from './components/Profile';
+import ClassSet from './components/ClassSet';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -51,6 +52,8 @@ root.render(
         <Route path="/List" element={<List />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Profile" element={<Profile />} />
+        <Route path="/ClassSet" element={<ClassSet />} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

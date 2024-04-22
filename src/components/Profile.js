@@ -7,6 +7,9 @@ export const Profile = () => {
     const goToAT = () => {
         navigate('/AdminTable');
       };
+      const goToClassSet = () => {
+        navigate('/ClassSet');
+      };
     return (
         <div class="container mt-5">
             <div class="row">
@@ -69,6 +72,8 @@ export const Profile = () => {
                                     </div>
                                     {/* <button class="btn btn-style-1 btn-primary" type="button" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Login</button> */}
                                     <button class="btn btn-style-1 btn-primary" type="button" onClick={goToAT}>Admin Schedule</button>
+                                    <button class="btn btn-style-1 btn-primary" type="button" onClick={goToClassSet}> Class Set </button>
+
                                 </div>
                         </div>
                     </form>
