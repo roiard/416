@@ -48,7 +48,10 @@ export const TimeTable1 = () => {
 
         const url = 'http://localhost:5000/check-and-process?department=' + department + '&year=' + year + '&semester=' + semester
         try {
-            const response = await fetch(url);
+            const response = await fetch(url, {
+                method: 'GET',
+                mode: 'no-cors',
+            });
 
             if (!response.ok) {
                 setCourses([])
@@ -130,6 +133,9 @@ export const TimeTable1 = () => {
         setYear('22')
         setSemester('F')
     };
+    const goToCSV = () => {
+        window.location.href = 'http://127.0.0.1:5000';
+    };
 
     return (
         <div className="container">
@@ -141,6 +147,9 @@ export const TimeTable1 = () => {
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link onClick={goToList}>List</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link onClick={goToCSV}>Input CSV</Nav.Link>
                     </Nav.Item>
                     <NavDropdown title="Department" id="nav-dropdown">
                         <NavDropdown.Item onClick={goToAMS}>AMS</NavDropdown.Item>
