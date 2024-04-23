@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, jsonify
+from flask import Flask, request, redirect, jsonify, send_from_directory
 from flask_cors import CORS,cross_origin
 import pandas as pd
 from werkzeug.utils import secure_filename
@@ -39,6 +39,48 @@ def upload_file():
         file.save(filepath)
         process_and_store_data(filepath)
         return "File uploaded and processed. Use /courses to retrieve."
+    
+@app.route('/upload', methods=['POST'])
+def upload_file_web():
+    if 'file' not in request.files:
+        return jsonify(message="No file part"), 400
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify(message="No selected file"), 400
+    if file:
+        filename = secure_filename(file.filename)
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(filepath)
+        process_and_store_data(filepath)
+        return jsonify({"message": "File uploaded and processed", "data": processed_data}), 200
+
+@app.route('/download-excel', methods=['GET'])
+def download_excel():
+    # Assuming 'data' is your JSON data
+    data = request.get_json()
+    department = request.args.get('department')
+    year = request.args.get('year')
+    semester = request.args.get('semester')
+
+    if not data: 
+        return jsonify({"error": "No data provided"}), 400
+    # Convert JSON to DataFrame
+    df = pd.DataFrame(data)
+
+    # Specify a filename
+    filename = f'course_{year}_{semester}_{department}.xlsx'
+    
+    # Ensure the UPLOAD_FOLDER directory exists
+    if not os.path.exists(app.config['UPLOAD_FOLDER']):
+        os.makedirs(app.config['UPLOAD_FOLDER'])
+
+    file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
+    # Save the DataFrame as an Excel file
+    df.to_excel(file_path, index=False)
+
+    # Send the file to the client
+    return send_from_directory(directory=app.config['UPLOAD_FOLDER'], path=filename, as_attachment=True)
+    
 def show_data(path):
     # Read CSV and process data
     df = pd.read_excel(path, sheet_name=0)
@@ -117,10 +159,8 @@ def check_and_process_file():
     # Check if file exists
     if os.path.isfile(filepath):
         try:
-            if (year == '24') and (semester == 'F'):
-                process_and_store_data(filepath)
-            else:
-                show_data(filepath)
+            
+            show_data(filepath)
 
             return jsonify({'message': 'File exists and processed', 'data': processed_data})
         except Exception as e:
@@ -135,6 +175,7 @@ def check_and_process_file():
             'filepath': filepath,
             'data': []
         }), 404
+
 
 @app.route('/courses', methods=['GET'])
 def get_data():

@@ -142,12 +142,12 @@ export const TimeTable1 = () => {
                     <Nav.Item>
                         <Nav.Link onClick={goToMain}>Home</Nav.Link>
                     </Nav.Item>
-                    <Nav.Item>
+                    {/* <Nav.Item>
                         <Nav.Link onClick={goToList}>List</Nav.Link>
-                    </Nav.Item>
-                    {(year=='24')&&(semester=='F')&&(<Nav.Item>
+                    </Nav.Item> */}
+                    {/* {(year=='24')&&(semester=='F')&&(<Nav.Item>
                         <Nav.Link onClick={goToCSV}>Input CSV</Nav.Link>
-                    </Nav.Item>)}
+                    </Nav.Item>)} */}
                     <NavDropdown title="Department" id="nav-dropdown">
                         <NavDropdown.Item onClick={goToAMS}>AMS</NavDropdown.Item>
                         <NavDropdown.Item onClick={goToBM}>BM</NavDropdown.Item>
