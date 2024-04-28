@@ -10,7 +10,8 @@ import logging
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './'
-processed_data = [] 
+processed_data = []
+
 cors = CORS(app)
 
 # remove this part after fetching index.html page
@@ -54,16 +55,18 @@ def upload_file_web():
         process_and_store_data(filepath)
         return jsonify({"message": "File uploaded and processed", "data": processed_data}), 200
 
-@app.route('/download-excel', methods=['GET'])
+@app.route('/download-excel', methods=['POST'])
 def download_excel():
     # Assuming 'data' is your JSON data
     data = request.get_json()
+
+    if not data: 
+        return jsonify({"error": "No data provided"}), 400
+
     department = request.args.get('department')
     year = request.args.get('year')
     semester = request.args.get('semester')
 
-    if not data: 
-        return jsonify({"error": "No data provided"}), 400
     # Convert JSON to DataFrame
     df = pd.DataFrame(data)
 
@@ -176,6 +179,16 @@ def check_and_process_file():
             'data': []
         }), 404
 
+@app.route('/login', methods=['POST'])
+def login():
+    user_data = request.get_json()
+    username = user_data.get('username')
+    password = user_data.get('password')
+
+    if username == 'admin@gmail.com' and password == 'password':
+        return jsonify({"message": "Login successful", "status": "success"}), 200
+    else:
+        return jsonify({"message": "Invalid credentials", "status": "fail"}), 401
 
 @app.route('/courses', methods=['GET'])
 def get_data():

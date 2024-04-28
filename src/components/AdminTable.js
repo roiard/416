@@ -119,24 +119,34 @@
 
         const goToTheList = async () => {
             try {
-                const response = await fetch('http://localhost:5000/download-excel' + department + '&year=' + year + '&semester=' + semester, {
+                const departmentEncoded = encodeURIComponent(department);
+                const yearEncoded = encodeURIComponent(year);
+                const semesterEncoded = encodeURIComponent(semester);
+        
+                const url = `http://localhost:5000/download-excel?department=${departmentEncoded}&year=${yearEncoded}&semester=${semesterEncoded}`;
+                const response = await fetch(url, {
                     method: 'POST',
-                    body: courses // Assuming 'courses' is the state you want to send
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(courses) // 데이터를 JSON 형태로 전송
                 });
+        
                 if (!response.ok) throw new Error('Failed to download file');
         
-                // Handle the response data (the file)
                 const blob = await response.blob();
                 const downloadUrl = window.URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 link.href = downloadUrl;
-                link.setAttribute('download', `course_${year}_${semester}_${department}.xlsx`); 
+                link.setAttribute('download', `course_${year}_${semester}_${department}.xlsx`);
+                document.body.appendChild(link);
                 link.click();
-                link.parentNode.removeChild(link);
+                document.body.removeChild(link);
             } catch (error) {
                 console.error('Error:', error);
             }
         };
+        
 
         const handleFileUpload = async (file) => {
             const formData = new FormData();
