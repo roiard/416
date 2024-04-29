@@ -1,0 +1,9 @@
+변경사항 : 
+
+Time Table css 에서 detail-course - width 100% 로 변경
+
+className="course-display" 위치 변경하면서 넓이 보기
+
+classNmae active my-active  바꾸기
+
+TT3 : push 전 테스트까지
