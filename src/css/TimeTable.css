@@ -254,3 +254,37 @@ body {
     min-width: 135px;
   }
 }
+
+.my-active {
+  margin : 10;
+  padding : 0;
+}
+
+.course-display {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* margin:auto; */
+}
+
+.detail-course {
+  margin: 3px;
+  padding: 15px;
+  border-radius: 5%;
+  background-color: aqua;
+  width : 100%;
+  height: 100%;
+}
+
+.course-number {
+  font-weight: 700;
+  color: #000;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.professor-name {
+  font-size: 16px;
+  line-height: normal;
+  margin-bottom: 0;
+}
