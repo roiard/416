@@ -14,7 +14,7 @@ export const TimeTable1 = () => {
     const [courses, setCourses] = useState([]);
     const [message, setMessage] = useState('');
     const [fileFound, setFileFound] = useState(false);
-    
+
     useEffect(() => {
         // const fetchCourses = async () => {
         //     try {
@@ -60,7 +60,7 @@ export const TimeTable1 = () => {
             setCourses(data.data);
             setMessage(data.message);
             setFileFound(true);
-            console.log('Data:', data.data); 
+            console.log('Data:', data.data);
             console.log(data.message)
             console.log(semester)
         } catch (error) {
@@ -193,13 +193,20 @@ export const TimeTable1 = () => {
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "9:00 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "MW" && course['Start Time'] === "9:00 AM" && (
-                                                        <div key={index}>
-                                                            {course.Subj}
-                                                            {course.CRS}
-                                                            {'-    -'}
-                                                            {course.Instructor}
-                                                            {'-    -'}
-                                                            {course.Room}
+                                                        // <div key={index}>
+                                                        //     {course.Subj}
+                                                        //     {course.CRS}
+                                                        //     {'-    -'}
+                                                        //     {course.Instructor}
+                                                        //     {'-    -'}
+                                                        //     {course.Room}
+                                                        // </div>
+                                                        <div key={index} className="course-display">
+                                                            <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
+                                                                <div className="course-number">{course.Subj}</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
                                                         </div>
                                                     )
                                                 ))
