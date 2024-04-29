@@ -9,10 +9,11 @@ export const Login = () => {
       };
       
     const goToProfile = async (event) => {
-        event.preventDefault(); 
-        const email = document.getElementById('exampleInputEmail1').value;
-        const password = document.getElementById('exampleInputPassword1').value;
-    
+    event.preventDefault(); 
+    const email = document.getElementById('exampleInputEmail1').value;
+    const password = document.getElementById('exampleInputPassword1').value;
+
+    try {
         const response = await fetch('http://localhost:5000/login', {
             method: 'POST',
             headers: {
@@ -23,15 +24,20 @@ export const Login = () => {
                 password: password
             })
         });
-    
+
         const data = await response.json();
-    
+
         if (data.status === 'success') {
             navigate('/Profile');
         } else {
             alert('Invalid credentials');
         }
-    };
+    } catch (error) {
+        console.error('Failed to fetch', error);
+        alert('Failed to connect. Please check your connection and try again.');
+    }
+};
+
       
     return (
         <div id="main-wrapper" className="container">
@@ -51,14 +57,14 @@ export const Login = () => {
 
                                 <form onSubmit={goToProfile}> 
                                     <div className="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
+                                        <label htmlFor="exampleInputEmail1">Email address</label>
                                         <input type="email" className="form-control" id="exampleInputEmail1"></input>
                                     </div>
                                     <div className="form-group mb-5">
-                                        <label for="exampleInputPassword1">Password</label>
+                                        <label htmlFor="exampleInputPassword1">Password</label>
                                         <input type="password" className="form-control" id="exampleInputPassword1"></input>
                                     </div>
-                                    <button type="submit" className="btn btn-theme" onClick={goToProfile} >Login</button>
+                                    <button type="submit" className="btn btn-theme">Login</button>
                                     <a href="#l" className="forgot-link float-right text-primary">Forgot password?</a>
                                 </form>
                             </div>

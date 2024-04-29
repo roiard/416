@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './'
 processed_data = []
 
-cors = CORS(app)
+cors = CORS(app, supports_credentials=True)
 
 # remove this part after fetching index.html page
 @app.route('/')
@@ -180,6 +180,8 @@ def check_and_process_file():
         }), 404
 
 @app.route('/login', methods=['POST'])
+@cross_origin(origin='localhost', headers=['Content- Type', 'Authorization'])
+
 def login():
     user_data = request.get_json()
     username = user_data.get('username')
@@ -189,6 +191,7 @@ def login():
         return jsonify({"message": "Login successful", "status": "success"}), 200
     else:
         return jsonify({"message": "Invalid credentials", "status": "fail"}), 401
+    
 
 @app.route('/courses', methods=['GET'])
 def get_data():
