@@ -162,11 +162,11 @@ export const TimeTable1 = () => {
                                     <td className="day">09:00 - 10:20</td>
                                     {/* Mon1 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "9:00 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "MW" && course['Start Time'] === "9:00 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -183,17 +183,23 @@ export const TimeTable1 = () => {
                                                 //         <div className="professor-name">Mione</div>
                                                 //         <div className="room-number">B 105</div>
                                                 //     </div>
+                                                //     <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
+                                                //         <div className="course-number">CSE 316</div>
+                                                //         <div className="professor-name">Mione</div>
+                                                //         <div className="room-number">B 105</div>
+                                                //     </div>
                                                 // </div>
+                                                
                                             }
                                         </div>
                                     </td>
                                     {/* Tue1*/}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "9:00 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "TUTH" && course['Start Time'] === "9:00 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -209,11 +215,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Wed1 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "9:00 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "MW" && course['Start Time'] === "9:00 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -229,11 +235,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Thu1 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "9:00 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "TUTH" && course['Start Time'] === "9:00 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -249,11 +255,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Fir1 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "F" && course['Start Time'] === "9:00 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "F" && course['Start Time'] === "9:00 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -273,11 +279,11 @@ export const TimeTable1 = () => {
                                     <td className="day">10:30 - 11:50</td>
                                     {/* Mon2 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "10:30 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "MW" && course['Start Time'] === "10:30 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -293,11 +299,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Tue2 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "10:30 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "TUTH" && course['Start Time'] === "10:30 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -313,11 +319,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Wed2 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "10:30 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "MW" && course['Start Time'] === "10:30 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -333,11 +339,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Thu2 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "10:30 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "TUTH" && course['Start Time'] === "10:30 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -353,11 +359,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Fri2 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "F" && course['Start Time'] === "10:30 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "F" && course['Start Time'] === "10:30 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -377,11 +383,11 @@ export const TimeTable1 = () => {
                                     <td className="day">12:30 - 01:50</td>
                                     {/* Mon3  */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "12:30 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "MW" && course['Start Time'] === "12:30 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -397,11 +403,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Tue3 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "12:30 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "TUTH" && course['Start Time'] === "12:30 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -417,11 +423,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Wed3 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "12:30 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "MW" && course['Start Time'] === "12:30 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -437,11 +443,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Thu3 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "12:30 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "TUTH" && course['Start Time'] === "12:30 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -457,11 +463,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Fri3 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "F" && course['Start Time'] === "12:30 AM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "F" && course['Start Time'] === "12:30 AM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -481,11 +487,11 @@ export const TimeTable1 = () => {
                                     <td className="day">02:00 - 03:20</td>
                                     {/* Mon 4 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "2:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "MW" && course['Start Time'] === "2:00 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -501,11 +507,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Tue 4 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "2:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "TUTH" && course['Start Time'] === "2:00 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -521,11 +527,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Wed 4 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "2:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "MW" && course['Start Time'] === "2:00 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -541,11 +547,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Thu 4 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "2:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "TUTH" && course['Start Time'] === "2:00 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -561,11 +567,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Fri 4 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "F" && course['Start Time'] === "2:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "F" && course['Start Time'] === "2:00 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -585,11 +591,11 @@ export const TimeTable1 = () => {
                                     <td className="day">03:30 - 04:50</td>
                                     {/* Mon 5 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "3:30 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "MW" && course['Start Time'] === "3:30 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -605,11 +611,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Tue 5 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "3:30 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "TUTH" && course['Start Time'] === "3:30 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -625,11 +631,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Wed 5 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "3:30 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "MW" && course['Start Time'] === "3:30 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -645,11 +651,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Thu 5 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "3:30 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "TUTH" && course['Start Time'] === "3:30 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -665,11 +671,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Fri 5 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "F" && course['Start Time'] === "3:30 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "F" && course['Start Time'] === "3:30 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -689,11 +695,11 @@ export const TimeTable1 = () => {
                                     <td className="day">05:00 - 06:20</td>
                                     {/* Mon 6 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "5:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "MW" && course['Start Time'] === "5:00 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -709,11 +715,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Tue 6 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "5:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "TUTH" && course['Start Time'] === "5:00 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -729,11 +735,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Wed 6 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "5:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "MW" && course['Start Time'] === "5:00 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -749,11 +755,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Thu 6 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "5:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "TUTH" && course['Start Time'] === "5:00 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
@@ -769,11 +775,11 @@ export const TimeTable1 = () => {
                                     </td>
                                     {/* Fri 6 */}
                                     <td className="my-active" style={{ padding: '5px' }}>
-                                        <div>
+                                        <div className="course-display">
                                             {courses.filter(course => course.Days === "F" && course['Start Time'] === "5:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
                                                     course.Days === "F" && course['Start Time'] === "5:00 PM" && (
-                                                        <div className="course-display" key={index}>
+                                                        <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
