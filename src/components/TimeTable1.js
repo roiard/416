@@ -169,7 +169,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -202,7 +202,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -222,7 +222,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -242,7 +242,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -262,7 +262,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -286,7 +286,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -306,7 +306,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -326,7 +326,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -346,7 +346,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -366,7 +366,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -390,7 +390,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -410,7 +410,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -430,7 +430,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -450,7 +450,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -470,7 +470,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -494,7 +494,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -514,7 +514,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -534,7 +534,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -554,7 +554,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -574,7 +574,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -598,7 +598,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -618,7 +618,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -638,7 +638,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -658,7 +658,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -678,7 +678,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -702,7 +702,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -722,7 +722,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -742,7 +742,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -762,7 +762,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
@@ -782,7 +782,7 @@ export const TimeTable1 = () => {
                                                         <div key={index}>
                                                             <div className="detail-course" draggable="true" onDragStart={(event) => event.dataTransfer.setData("text/plain", null)}>
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                {/* <div className="professor-name">{course.Instructor}</div> */}
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
                                                         </div>
