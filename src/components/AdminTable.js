@@ -225,7 +225,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -248,7 +248,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -271,7 +271,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -294,7 +294,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -317,7 +317,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -344,7 +344,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -367,7 +367,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -390,7 +390,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -413,7 +413,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -436,7 +436,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -463,7 +463,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -486,7 +486,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -509,7 +509,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -532,7 +532,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -555,7 +555,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -582,7 +582,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -605,7 +605,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -628,7 +628,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -651,7 +651,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -674,7 +674,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -701,7 +701,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -724,7 +724,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -747,7 +747,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -770,7 +770,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -793,7 +793,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -820,7 +820,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -843,7 +843,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -866,7 +866,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -889,7 +889,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -912,7 +912,7 @@
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
