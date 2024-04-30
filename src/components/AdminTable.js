@@ -51,27 +51,21 @@
             navigate('/');
         };
         const goToAMS = () => {
-            // navigate('/TimeTable1');
             setDepartment('AMS')
         };
         const goToBM = () => {
-            // navigate('/TimeTable2');
             setDepartment('BM')
         };
         const goToCS = () => {
-            // navigate('/TimeTable3');
             setDepartment('CSE')
         };
         const goToECE = () => {
-            // navigate('/TimeTable4');
             setDepartment('ECE')
         };
         const goToMEC = () => {
-            // navigate('/TimeTable5');
             setDepartment('MEC')
         };
         const goToTSM = () => {
-            // navigate('/TimeTable6');
             setDepartment('TSM')
         };
         const goToFSC = () => {
@@ -82,27 +76,22 @@
             navigate('/List');
         };
         const goTo24F = () => {
-            // navigate('/Table24F');
             setYear('24')
             setSemester('F')
         };
         const goTo24S = () => {
-            // navigate('/Table24S');
             setYear('24')
             setSemester('S')
         };
         const goTo23F = () => {
-            // navigate('/Table24S');
             setYear('23')
             setSemester('F')
         };
         const goTo23S = () => {
-            // navigate('/Table24S');
             setYear('23')
             setSemester('S')
         };
         const goTo22F = () => {
-            // navigate('/Table24S');
             setYear('22')
             setSemester('F')
         };
@@ -190,9 +179,6 @@
                                 onChange={handleFileSelect}
                             />
                         </div>
-                        {/* <Nav.Item>
-                            <Nav.Link onClick={() => fileInputRef.current && fileInputRef.current.click()}>Input CSV</Nav.Link>
-                        </Nav.Item> */}
                         <Nav.Item>
                             <Nav.Link onClick={goToTheList}>Save</Nav.Link>
                         </Nav.Item>
@@ -205,13 +191,6 @@
                             <NavDropdown.Item onClick={goToTSM}>TSM</NavDropdown.Item>
                             <NavDropdown.Item onClick={goToFSC}>FSC</NavDropdown.Item>
                         </NavDropdown>
-                        {/* <NavDropdown title="Semester" id="nav-dropdown">
-                            <NavDropdown.Item onClick={goTo24F}>2024F</NavDropdown.Item>
-                            <NavDropdown.Item onClick={goTo24S}>2024S</NavDropdown.Item>
-                            <NavDropdown.Item onClick={goTo23F}>2023F</NavDropdown.Item>
-                            <NavDropdown.Item onClick={goTo23S}>2023S</NavDropdown.Item>
-                            <NavDropdown.Item onClick={goTo22F}>2022F</NavDropdown.Item>
-                        </NavDropdown> */}
                     </Nav>
                     <h2 className="display-18 display-md-16 display-lg-14 mb-0">New Semester Admin Time Table!!! ({department})</h2>
                 </div>
@@ -236,775 +215,715 @@
                                         {/* Class #1================================================= */}
                                         <td className="day">09:00 - 10:20</td>
                                         {/* Mon1 */}
-                                        <td className="active">
-                                            <h4>Mon 9AM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "MW" && course['Start Time'] === "9:00 AM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "MW" && course['Start Time'] === "9:00 AM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Tue1*/}
-                                        <td className="active">
-                                            <h4>Tue 9AM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "9:00 AM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "TUTH" && course['Start Time'] === "9:00 AM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Wed1 */}
-                                        <td className="active">
-                                            <h4>Wed 9AM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "MW" && course['Start Time'] === "9:00 AM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "MW" && course['Start Time'] === "9:00 AM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Thu1 */}
-                                        <td className="active">
-                                            <h4>Thu 9AM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "9:00 AM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "TUTH" && course['Start Time'] === "9:00 AM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Fir1 */}
-                                        <td className="active">
-                                            <h4>Fri 9AM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "F" && course['Start Time'] === "9:00 AM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "MW" && course['Start Time'] === "9:00 AM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        {/* Class #2================================================= */}
-                                        <td className="day">10:30 - 11:50</td>
-                                        {/* Mon2 */}
-                                        <td className="active">
-                                            <h4>Mon 1030</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "MW" && course['Start Time'] === "10:30 AM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "MW" && course['Start Time'] === "10:30 AM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Tue2 */}
-                                        <td className="active">
-                                            <h4>Tue 1030</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "10:30 AM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "TUTH" && course['Start Time'] === "10:30 AM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Wed2 */}
-                                        <td className="active">
-                                            <h4>Wed 1030</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "MW" && course['Start Time'] === "10:30 AM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "MW" && course['Start Time'] === "10:30 AM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Thu2 */}
-                                        <td className="active">
-                                            <h4>Thu 1030</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "10:30 AM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "TUTH" && course['Start Time'] === "10:30 AM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Fri2 */}
-                                        <td className="active">
-                                            <h4>Fri 1030</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "F" && course['Start Time'] === "10:30 AM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "F" && course['Start Time'] === "10:30 AM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        {/* Class #3================================================= */}
-                                        <td className="day">12:30 - 01:50</td>
-                                        {/* Mon3  */}
-                                        <td className="active">
-                                            <h4>Mon 1230</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "MW" && course['Start Time'] === "12:30 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "MW" && course['Start Time'] === "12:30 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Tue3 */}
-                                        <td className="active">
-                                            <h4>Tue 1230</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "12:30 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "TUTH" && course['Start Time'] === "12:30 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Wed3 */}
-                                        <td className="active">
-                                            <h4>Wed 1230</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "MW" && course['Start Time'] === "12:30 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "MW" && course['Start Time'] === "12:30 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Thu3 */}
-                                        <td className="active">
-                                            <h4>Thu 1230</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "12:30 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "TUTH" && course['Start Time'] === "12:30 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Fri3 */}
-                                        <td className="active">
-                                            <h4>Fri 1230</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "F" && course['Start Time'] === "12:30 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "F" && course['Start Time'] === "12:30 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        {/* Class #4================================================= */}
-                                        <td className="day">02:00 - 03:20</td>
-                                        {/* Mon 4 */}
-                                        <td className="active">
-                                            <h4>Mon 2PM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "MW" && course['Start Time'] === "2:00 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "MW" && course['Start Time'] === "2:00 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Tue 4 */}
-                                        <td className="active">
-                                            <h4>Tue 2PM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "2:00 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "TUTH" && course['Start Time'] === "2:00 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Wed 4 */}
-                                        <td className="active">
-                                            <h4>Wed 2PM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "MW" && course['Start Time'] === "2:00 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "MW" && course['Start Time'] === "2:00 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Thu 4 */}
-                                        <td className="active">
-                                            <h4>Thu 2PM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "2:00 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "TUTH" && course['Start Time'] === "2:00 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Fri 4 */}
-                                        <td className="active">
-                                            <h4>Fri 2PM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "F" && course['Start Time'] === "2:00 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "F" && course['Start Time'] === "2:00 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        {/* Class #5================================================= */}
-                                        <td className="day">03:30 - 04:50</td>
-                                        {/* Mon 5 */}
-                                        <td className="active">
-                                            <h4>Mon 3:30</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "MW" && course['Start Time'] === "3:30 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "MW" && course['Start Time'] === "3:30 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Tue 5 */}
-                                        <td className="active">
-                                            <h4>Tue 3:30</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "3:30 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "TUTH" && course['Start Time'] === "3:30 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Wed 5 */}
-                                        <td className="active">
-                                            <h4>Wed 3:30</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "MW" && course['Start Time'] === "3:30 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "MW" && course['Start Time'] === "3:30 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Thu 5 */}
-                                        <td className="active">
-                                            <h4>Thu 3:30</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "3:30 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "TUTH" && course['Start Time'] === "3:30 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Fri 5 */}
-                                        <td className="active">
-                                            <h4>Fri 3:30</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "F" && course['Start Time'] === "3:30 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "F" && course['Start Time'] === "3:30 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        {/* Class #6================================================= */}
-                                        <td className="day">05:00 - 06:20</td>
-                                        {/* Mon 6 */}
-                                        <td className="active">
-                                            <h4>Mon 5PM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "MW" && course['Start Time'] === "5:00 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "MW" && course['Start Time'] === "5:00 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Tue 6 */}
-                                        <td className="active">
-                                            <h4>Tue 5PM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "5:00 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "TUTH" && course['Start Time'] === "5:00 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Wed 6 */}
-                                        <td className="active">
-                                            <h4>Wed 5PM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "MW" && course['Start Time'] === "5:00 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "MW" && course['Start Time'] === "5:00 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Thu 6 */}
-                                        <td className="active">
-                                            <h4>Thu 5PM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "5:00 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "TUTH" && course['Start Time'] === "5:00 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        {/* Fri 6 */}
-                                        <td className="active">
-                                            <h4>Fri 5PM</h4>
-                                            <p>Prof Name</p>
-                                            <div className="hover">
-                                                <ul>
-                                                    {courses.filter(course => course.Days === "F" && course['Start Time'] === "5:00 PM").length > 0 ?
-                                                        courses.map((course, index) => (
-                                                            course.Days === "F" && course['Start Time'] === "5:00 PM" && (
-                                                                <li key={index}>
-                                                                    {course.Subj}
-                                                                    {course.CRS}
-                                                                    {'-    -'}
-                                                                    {course.Instructor}
-                                                                    {'-    -'}
-                                                                    {course.Room}
-                                                                </li>
-                                                            )
-                                                        ))
-                                                        :
-                                                        <li>No Class</li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        </td>
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "MW" && course['Start Time'] === "9:00 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "MW" && course['Start Time'] === "9:00 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Tue1*/}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "9:00 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "TUTH" && course['Start Time'] === "9:00 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Wed1 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "MW" && course['Start Time'] === "9:00 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "MW" && course['Start Time'] === "9:00 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Thu1 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "9:00 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "TUTH" && course['Start Time'] === "9:00 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Fir1 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "F" && course['Start Time'] === "9:00 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "F" && course['Start Time'] === "9:00 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    {/* Class #2================================================= */}
+                                    <td className="day">10:30 - 11:50</td>
+                                    {/* Mon2 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "MW" && course['Start Time'] === "10:30 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "MW" && course['Start Time'] === "10:30 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Tue2 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "10:30 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "TUTH" && course['Start Time'] === "10:30 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Wed2 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "MW" && course['Start Time'] === "10:30 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "MW" && course['Start Time'] === "10:30 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Thu2 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "10:30 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "TUTH" && course['Start Time'] === "10:30 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Fri2 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "F" && course['Start Time'] === "10:30 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "F" && course['Start Time'] === "10:30 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    {/* Class #3================================================= */}
+                                    <td className="day">12:30 - 01:50</td>
+                                    {/* Mon3  */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "MW" && course['Start Time'] === "12:30 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "MW" && course['Start Time'] === "12:30 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Tue3 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "12:30 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "TUTH" && course['Start Time'] === "12:30 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Wed3 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "MW" && course['Start Time'] === "12:30 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "MW" && course['Start Time'] === "12:30 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Thu3 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "12:30 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "TUTH" && course['Start Time'] === "12:30 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Fri3 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "F" && course['Start Time'] === "12:30 AM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "F" && course['Start Time'] === "12:30 AM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    {/* Class #4================================================= */}
+                                    <td className="day">02:00 - 03:20</td>
+                                    {/* Mon 4 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "MW" && course['Start Time'] === "2:00 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "MW" && course['Start Time'] === "2:00 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Tue 4 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "2:00 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "TUTH" && course['Start Time'] === "2:00 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Wed 4 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "MW" && course['Start Time'] === "2:00 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "MW" && course['Start Time'] === "2:00 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Thu 4 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "2:00 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "TUTH" && course['Start Time'] === "2:00 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Fri 4 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "F" && course['Start Time'] === "2:00 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "F" && course['Start Time'] === "2:00 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    {/* Class #5================================================= */}
+                                    <td className="day">03:30 - 04:50</td>
+                                    {/* Mon 5 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "MW" && course['Start Time'] === "3:30 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "MW" && course['Start Time'] === "3:30 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Tue 5 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "3:30 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "TUTH" && course['Start Time'] === "3:30 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Wed 5 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "MW" && course['Start Time'] === "3:30 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "MW" && course['Start Time'] === "3:30 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Thu 5 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "3:30 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "TUTH" && course['Start Time'] === "3:30 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Fri 5 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "F" && course['Start Time'] === "3:30 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "F" && course['Start Time'] === "3:30 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    {/* Class #6================================================= */}
+                                    <td className="day">05:00 - 06:20</td>
+                                    {/* Mon 6 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "MW" && course['Start Time'] === "5:00 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "MW" && course['Start Time'] === "3:30 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Tue 6 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "5:00 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "TUTH" && course['Start Time'] === "3:30 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Wed 6 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "MW" && course['Start Time'] === "5:00 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "MW" && course['Start Time'] === "3:30 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Thu 6 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "5:00 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "TUTH" && course['Start Time'] === "3:30 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
+                                    {/* Fri 6 */}
+                                    <td className="active" style={{ padding: '5px' }}>
+                                        <div className="course-display">
+                                            {courses.filter(course => course.Days === "F" && course['Start Time'] === "5:00 PM").length > 0 ?
+                                                courses.map((course, index) => (
+                                                    course.Days === "F" && course['Start Time'] === "3:30 PM" && (
+                                                        <div className="detail-course" draggable="true" key={index}>
+                                                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                            <div className="room-number">{course.Room}</div>
+                                                            <div className="hover">
+                                                                <div className="course-number">{course.Subj} {course.CRS}</div>
+                                                                <div>course['Course Title']</div>
+                                                                <div className="professor-name">{course.Instructor}</div>
+                                                                <div className="room-number">{course.Room}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                ))
+                                                :
+                                                <li>No Class</li>
+                                            }
+                                        </div>
+                                    </td>
                                     </tr>
                                 </tbody>
                             </table>
