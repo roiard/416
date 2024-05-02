@@ -301,3 +301,9 @@ body {
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
 }
+
+.no-class {
+  background-color: #f0f1f3;
+  width: 100%;
+  height: 100%;
+}

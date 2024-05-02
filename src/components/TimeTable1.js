@@ -156,7 +156,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -179,7 +179,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -202,7 +202,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -225,7 +225,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -248,7 +248,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -275,7 +275,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -298,7 +298,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -321,7 +321,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -344,7 +344,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -367,7 +367,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -394,7 +394,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -417,7 +417,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -440,7 +440,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -463,7 +463,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -486,7 +486,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -513,7 +513,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -536,7 +536,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -559,7 +559,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -582,7 +582,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -605,7 +605,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -632,7 +632,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -655,7 +655,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -678,7 +678,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -701,7 +701,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -724,7 +724,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -751,7 +751,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -774,7 +774,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -797,7 +797,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -820,7 +820,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
@@ -843,7 +843,7 @@ export const TimeTable1 = () => {
                                                     )
                                                 ))
                                                 :
-                                                <li>No Class</li>
+                                                <div className="no-class">No Class</div>
                                             }
                                         </div>
                                     </td>
