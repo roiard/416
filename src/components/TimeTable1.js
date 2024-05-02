@@ -146,9 +146,10 @@ export const TimeTable1 = () => {
                                                         <div className="detail-course" draggable="true" key={index}>
                                                             <div className="course-number">{course.Subj} {course.CRS}</div>
                                                             <div className="room-number">{course.Room}</div>
+                                                            {course['Cmp'] == "REC" && <div className="Rec"> This is Rec!!!</div>}
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -171,7 +172,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -194,7 +195,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -217,7 +218,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -240,7 +241,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -267,7 +268,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -290,7 +291,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -313,7 +314,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -336,7 +337,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -359,7 +360,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -386,7 +387,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -409,7 +410,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -432,7 +433,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -455,7 +456,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -478,7 +479,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -505,7 +506,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -528,7 +529,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -551,7 +552,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -574,7 +575,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -597,7 +598,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -624,7 +625,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -647,7 +648,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -670,7 +671,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -693,7 +694,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -716,7 +717,7 @@ export const TimeTable1 = () => {
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -737,13 +738,13 @@ export const TimeTable1 = () => {
                                         <div className="course-display">
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "5:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
-                                                    course.Days === "MW" && course['Start Time'] === "3:30 PM" && (
+                                                    course.Days === "MW" && course['Start Time'] === "5:00 PM" && (
                                                         <div className="detail-course" draggable="true" key={index}>
                                                             <div className="course-number">{course.Subj} {course.CRS}</div>
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -760,13 +761,13 @@ export const TimeTable1 = () => {
                                         <div className="course-display">
                                             {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "5:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
-                                                    course.Days === "TUTH" && course['Start Time'] === "3:30 PM" && (
+                                                    course.Days === "TUTH" && course['Start Time'] === "5:00 PM" && (
                                                         <div className="detail-course" draggable="true" key={index}>
                                                             <div className="course-number">{course.Subj} {course.CRS}</div>
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -783,13 +784,13 @@ export const TimeTable1 = () => {
                                         <div className="course-display">
                                             {courses.filter(course => course.Days === "MW" && course['Start Time'] === "5:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
-                                                    course.Days === "MW" && course['Start Time'] === "3:30 PM" && (
+                                                    course.Days === "MW" && course['Start Time'] === "5:00 PM" && (
                                                         <div className="detail-course" draggable="true" key={index}>
                                                             <div className="course-number">{course.Subj} {course.CRS}</div>
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -806,13 +807,13 @@ export const TimeTable1 = () => {
                                         <div className="course-display">
                                             {courses.filter(course => course.Days === "TUTH" && course['Start Time'] === "5:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
-                                                    course.Days === "TUTH" && course['Start Time'] === "3:30 PM" && (
+                                                    course.Days === "TUTH" && course['Start Time'] === "5:00 PM" && (
                                                         <div className="detail-course" draggable="true" key={index}>
                                                             <div className="course-number">{course.Subj} {course.CRS}</div>
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
@@ -829,13 +830,13 @@ export const TimeTable1 = () => {
                                         <div className="course-display">
                                             {courses.filter(course => course.Days === "F" && course['Start Time'] === "5:00 PM").length > 0 ?
                                                 courses.map((course, index) => (
-                                                    course.Days === "F" && course['Start Time'] === "3:30 PM" && (
+                                                    course.Days === "F" && course['Start Time'] === "5:00 PM" && (
                                                         <div className="detail-course" draggable="true" key={index}>
                                                             <div className="course-number">{course.Subj} {course.CRS}</div>
                                                             <div className="room-number">{course.Room}</div>
                                                             <div className="hover">
                                                                 <div className="course-number">{course.Subj} {course.CRS}</div>
-                                                                <div>course['Course Title']</div>
+                                                                <div>{course['Course Title']}</div>
                                                                 <div className="professor-name">{course.Instructor}</div>
                                                                 <div className="room-number">{course.Room}</div>
                                                             </div>
