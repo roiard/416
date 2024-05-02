@@ -6,25 +6,27 @@ import "../css/MainPage.css";
 import { useNavigate } from 'react-router-dom';
 
 export const MainPage = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const goToTT1 = () => {
-      navigate('/TimeTable1');
-    };
+  const goToTT1 = () => {
+    navigate('/TimeTable1');
+  };
 
-    const goToLogin = () => {
-      navigate('/Login');
-    };
+  const goToLogin = () => {
+    navigate('/Login');
+  };
 
   return (
     <div className="main-page">
       <div className="group">
 
-        <img src={sbulogo} className="sbulogo"/>
-        
+        <img src={sbulogo} className="sbulogo" />
+
         <div className="text-wrapper">SUNY Course Scheduling</div>
 
-        <img src={MainImage} className="main-image"/>
+        <div>
+          <img src={MainImage} className="main-image" style={{ marginTop: "130px" }} />
+        </div>
 
         <button className="timetable-button" onClick={goToTT1}>
           <div className="table-button-text">Show Time Table </div>

@@ -91,7 +91,8 @@ export const TimeTable1 = () => {
     };
 
     return (
-        <div className="container">
+        // <div className="container">
+        <div className="container" style={{ marginLeft: '10em', }}>
             <img src={sbulogo} className="sbulogo" />
             <div className="w-95 w-md-75 w-lg-60 w-xl-55 mx-auto mb-6 text-center ">
                 <Nav className="justify-content-end" activeKey="/home">
@@ -118,7 +119,7 @@ export const TimeTable1 = () => {
                 <h2 className="display-18 display-md-16 display-lg-14 mb-0">Time Table {!fileFound && " Not Updated"} ({department}) ({year}{semester})</h2>
             </div>
             <div className="row">
-                <div className="col-md-12" style={{ marginTop: '1.5%' }}>
+                <div className="col-md-15" style={{ marginTop: '1.5%' }}>
                     <div className="schedule-table wide-container">
                         <table className="table bg-white">
                             {/* 윗줄  */}
@@ -129,7 +130,8 @@ export const TimeTable1 = () => {
                                     <th>Tue</th>
                                     <th>Wed</th>
                                     <th>Thu</th>
-                                    <th className="last">Fri</th>
+                                    <th>Fri</th>
+                                    {/* <th className="last">Ect</th> */}
                                 </tr>
                             </thead>
                             {/* 바디  */}
@@ -848,6 +850,9 @@ export const TimeTable1 = () => {
                                             }
                                         </div>
                                     </td>
+                                </tr>
+                                <tr>
+
                                 </tr>
                             </tbody>
                         </table>

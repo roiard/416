@@ -1,13 +1,13 @@
 .main-page {
   background-color: #ffffff;
   overflow: hidden;
-  width: 100vw; 
+  width: 100vw;
   height: 100vh;
   margin: 0;
 }
 
 .group {
-  top : 0;
+  top: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -19,12 +19,12 @@
 /* SBU LOGO  */
 .main-page .sbulogo {
   position: absolute;
-  top : 1.5%;
-  left: 2%;             
-  height: auto;        
-  width: auto;        
+  top: 1.5%;
+  left: 2%;
+  height: auto;
+  width: auto;
   max-height: 100px;
-  max-width: 200px; 
+  max-width: 200px;
 }
 
 
@@ -41,15 +41,16 @@
   white-space: nowrap;
   left: 0;
   right: 0;
-  top:4%
+  top: 4%
 }
 
 
 /* 메인 이미지  */
 .main-page .main-image {
+  position: relative;
   margin-top: 6%;
   height: 72vh;
-  width: 150vh;
+  width: 130vh;
   border-radius: 8px;
 }
 
@@ -85,7 +86,7 @@
   top: 18px;
   white-space: nowrap;
 }
-  
+
 .main-page .element-logo-google {
   height: 63px;
   left: 1px;
@@ -94,7 +95,7 @@
   top: 1px;
   width: 63px;
 }
-  
+
 
 /* TimeTable 버튼  */
 .main-page .timetable-button {
