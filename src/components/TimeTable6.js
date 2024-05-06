@@ -1,4 +1,4 @@
-// 백업 본 
+// Time Table 1 백업 본 
 
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
