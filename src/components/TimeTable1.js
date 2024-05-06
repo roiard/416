@@ -91,54 +91,64 @@ export const TimeTable1 = () => {
     };
 
     const CourseDisplay = function ({ inputdays, inputtime, inputreci }) {
+        // inputdays = "MW, TUTH, F", inputtime = "9:00 AM", inputreci = "RECM, RECTU, RECW, RECTH, RECF", inputday2 = "M, TU, W, TU, F"
+        const numberToColor = (num) => {
+            num = (num * 1234567) % 999999;
+            return '#' + String(num).padStart(6, '0');
+        }
+        const findComplementary = (hexColor) => {
+            hexColor = hexColor.replace('#', '');
+            let r = parseInt(hexColor.substring(0, 2), 16);
+            let g = parseInt(hexColor.substring(2, 4), 16);
+            let b = parseInt(hexColor.substring(4, 6), 16);
+            r = 255 - r;
+            g = 255 - g;
+            b = 255 - b;
+            r = r.toString(16).padStart(2, '0');
+            g = g.toString(16).padStart(2, '0');
+            b = b.toString(16).padStart(2, '0');
+            return '#' + r + g + b;
+        }
         return (
-            <div className="course-display">
-                {courses.filter(course => course.Days === inputdays && course['Start Time'] === inputtime).length > 0 ?
-                    courses.map((course, index) => (
-                        course.Days === inputdays && course['Start Time'] === inputtime && (
-                            <div className="detail-course" draggable="true" key={index}>
+            <div className="course-display" style={{ backgroundColor: '#f0f1f3' }}>
+                {courses.filter(course => course.Days === inputdays && course['Start Time'] === inputtime).map((course, index) => (
+                    course.Days === inputdays && course['Start Time'] === inputtime && (
+                        <div className="detail-course" draggable="true" key={index} style={{ backgroundColor: numberToColor(course['Class Nbr']), color: findComplementary(numberToColor(course['Class Nbr'])) }}>
+                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                            {/* <div>{numberToColor(course['Class Nbr'])}</div>
+                            <div>{findComplementary(numberToColor(course['Class Nbr']))}</div> */}
+                            <div className="room-number">{course.Room}</div>
+                            <div className="hover" style={{ backgroundColor: numberToColor(course['Class Nbr']), color: findComplementary(numberToColor(course['Class Nbr'])) }}>
                                 <div className="course-number">{course.Subj} {course.CRS}</div>
+                                <div>{course['Course Title']}</div>
+                                <div className="professor-name">{course.Instructor}</div>
                                 <div className="room-number">{course.Room}</div>
-                                <div className="hover">
-                                    <div className="course-number">{course.Subj} {course.CRS}</div>
-                                    <div>{course['Course Title']}</div>
-                                    <div className="professor-name">{course.Instructor}</div>
-                                    <div className="room-number">{course.Room}</div>
-                                </div>
                             </div>
-                        )
-                    ))
-                    :
-                    <div className="no-class">No Class</div>
-                }
-                {courses.filter(course => course['Cmp'] === "REC").length > 0 ?
-                    courses.map((course, index) => (
-                        course['Cmp'] === "REC" && course.Days === inputreci && course['Start Time'] === inputtime && (
-                            <div className="detail-course" draggable="true" key={index}>
-                                <div>This is Reci class</div>
+                        </div>
+                    )
+                ))}
+                {courses.filter(course => course['Cmp'] === "REC").map((course, index) => (
+                    course['Cmp'] === "REC" && course.Days === inputreci && course['Start Time'] === inputtime && (
+                        <div className="detail-course reci-class" draggable="true" key={index} style={{ backgroundColor: numberToColor(course['Class Nbr']), color: findComplementary(numberToColor(course['Class Nbr'])) }}>
+                            <div className="course-number">{course.Subj} {course.CRS}</div>
+                            <div className="room-number">{course.Room}</div>
+                            <div className="hover" style={{ backgroundColor: numberToColor(course['Class Nbr']), color: findComplementary(numberToColor(course['Class Nbr'])) }}>
                                 <div className="course-number">{course.Subj} {course.CRS}</div>
+                                <div>{course['Course Title']}</div>
+                                <div className="professor-name">{course.Instructor}</div>
                                 <div className="room-number">{course.Room}</div>
-                                <div className="hover">
-                                    <div className="course-number">{course.Subj} {course.CRS}</div>
-                                    <div>{course['Course Title']}</div>
-                                    <div className="professor-name">{course.Instructor}</div>
-                                    <div className="room-number">{course.Room}</div>
-                                </div>
                             </div>
-                        )
-                    ))
-                    :
-                    <div className="no-class">No Class</div>
-                }
+                        </div>
+                    )
+                ))}
             </div>
         );
     }
 
     return (
-        // <div className="container">
-        <div className="container" style={{ marginLeft: '10em', }}>
+        <div className="container" style={{ marginLeft: '8em', marginTop: '0em' }}>
             <img src={sbulogo} className="sbulogo" />
-            <div className="w-95 w-md-75 w-lg-60 w-xl-55 mx-auto mb-6 text-center ">
+            <div className="w-95 w-md-75 w-lg-60 w-xl-55 mx-auto mb-6 text-center " style={{ paddingTop: '1em', paddingBottom: '0.5em' }}>
                 <Nav className="justify-content-end" activeKey="/home">
                     <Nav.Item>
                         <Nav.Link onClick={goToMain}>Home</Nav.Link>
@@ -169,7 +179,7 @@ export const TimeTable1 = () => {
                             {/* 윗줄  */}
                             <thead>
                                 <tr>
-                                    <th>Time \ Day</th>
+                                    <th style={{ paddingTop: '0.5em' }}><div style={{ width: '5em', height: '2.5em' }}>Time \ Day</div></th>
                                     <th>Mon</th>
                                     <th>Tue</th>
                                     <th>Wed</th>
