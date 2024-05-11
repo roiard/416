@@ -92,10 +92,22 @@ export const TimeTable1 = () => {
 
     const CourseDisplay = function ({ inputdays, inputtime, inputreci }) {
         // inputdays = "MW, TUTH, F", inputtime = "9:00 AM", inputreci = "RECM, RECTU, RECW, RECTH, RECF", inputday2 = "M, TU, W, TU, F"
-        const numberToColor = (num) => {
-            num = (num * 1234567) % 999999;
-            return '#' + String(num).padStart(6, '0');
+        // const textToColor = (nuSubj    //     num = (num * 1234567) % 999999;
+        //     return '#' + String(num).padStart(6, '0');
+        // }
+        const textToColor = (text) => {
+            let hash = 0;
+            for (let i = 0; i < text.length; i++) {
+                hash = text.charCodeAt(i) + ((hash << 11) - hash);
+            }
+            let color = '#';
+            for (let i = 0; i < 3; i++) {
+                let value = (hash >> (i * 8)) & 0xFF;
+                color += ('00' + value.toString(16)).substr(-2);
+            }
+            return color;
         }
+
         const findComplementary = (hexColor) => {
             hexColor = hexColor.replace('#', '');
             let r = parseInt(hexColor.substring(0, 2), 16);
@@ -113,12 +125,10 @@ export const TimeTable1 = () => {
             <div className="course-display" style={{ backgroundColor: '#f0f1f3' }}>
                 {courses.filter(course => course.Days === inputdays && course['Start Time'] === inputtime).map((course, index) => (
                     course.Days === inputdays && course['Start Time'] === inputtime && (
-                        <div className="detail-course" draggable="true" key={index} style={{ backgroundColor: numberToColor(course['Class Nbr']), color: findComplementary(numberToColor(course['Class Nbr'])) }}>
+                        <div className="detail-course" draggable="true" key={index} style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
                             <div className="course-number">{course.Subj} {course.CRS}</div>
-                            {/* <div>{numberToColor(course['Class Nbr'])}</div>
-                            <div>{findComplementary(numberToColor(course['Class Nbr']))}</div> */}
                             <div className="room-number">{course.Room}</div>
-                            <div className="hover" style={{ backgroundColor: numberToColor(course['Class Nbr']), color: findComplementary(numberToColor(course['Class Nbr'])) }}>
+                            <div className="hover" style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                 <div>{course['Course Title']}</div>
                                 <div className="professor-name">{course.Instructor}</div>
@@ -129,10 +139,10 @@ export const TimeTable1 = () => {
                 ))}
                 {courses.filter(course => course['Cmp'] === "REC").map((course, index) => (
                     course['Cmp'] === "REC" && course.Days === inputreci && course['Start Time'] === inputtime && (
-                        <div className="detail-course reci-class" draggable="true" key={index} style={{ backgroundColor: numberToColor(course['Class Nbr']), color: findComplementary(numberToColor(course['Class Nbr'])) }}>
+                        <div className="detail-course reci-class" draggable="true" key={index} style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
                             <div className="course-number">{course.Subj} {course.CRS}</div>
                             <div className="room-number">{course.Room}</div>
-                            <div className="hover" style={{ backgroundColor: numberToColor(course['Class Nbr']), color: findComplementary(numberToColor(course['Class Nbr'])) }}>
+                            <div className="hover" style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                 <div>{course['Course Title']}</div>
                                 <div className="professor-name">{course.Instructor}</div>
