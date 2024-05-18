@@ -50,6 +50,9 @@ export const AdminTable = () => {
     const goToMain = () => {
         navigate('/');
     };
+    const goToClassSet = () => {
+        navigate('/ClassSet');
+    };
     const goToAMS = () => {
         setDepartment('AMS')
     };
@@ -219,7 +222,10 @@ export const AdminTable = () => {
                         />
                     </div>
                     <Nav.Item>
-                        <Nav.Link onClick={goToTheList}>Save</Nav.Link>
+                        <Nav.Link onClick={goToTheList}>Download csv</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link onClick={goToClassSet}>Class Set</Nav.Link>
                     </Nav.Item>
                     <NavDropdown title="Department" id="nav-dropdown">
                         <NavDropdown.Item onClick={goToAMS}>AMS</NavDropdown.Item>

@@ -6,21 +6,21 @@ export const Profile = () => {
     const navigate = useNavigate();
     const goToAT = () => {
         navigate('/AdminTable');
-      };
-      const goToClassSet = () => {
+    };
+    const goToClassSet = () => {
         navigate('/ClassSet');
-      };
+    };
     return (
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-4 pb-5">
                     <div class="author-card pb-3">
-                        <div class="author-card-cover" style={{backgroundColor:'lightgrey'}} ></div>
+                        <div class="author-card-cover" style={{ backgroundColor: 'lightgrey' }} ></div>
                         <div class="author-card-profile">
                             <div class="author-card-avatar"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Daniel Adams"></img>
                             </div>
                             <div class="author-card-details">
-                                <h5 class="author-card-name text-lg">CS Admin</h5><span class="author-card-position">Joined February 06, 2017</span>
+                                <h5 class="author-card-name text-lg">Admin</h5><span class="author-card-position">Joined February 06, 2017</span>
                             </div>
                         </div>
                     </div>
@@ -65,16 +65,15 @@ export const Profile = () => {
                         </div>
                         <div class="col-12">
                             <hr class="mt-2 mb-3"></hr>
-                                <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                    <div class="custom-control custom-checkbox d-block">
-                                        <input class="custom-control-input" type="checkbox" id="subscribe_me" checked=""></input>
-                                            <label class="custom-control-label" for="subscribe_me">Remember Me</label>
-                                    </div>
-                                    {/* <button class="btn btn-style-1 btn-primary" type="button" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Login</button> */}
-                                    <button class="btn btn-style-1 btn-primary" type="button" onClick={goToAT}>Admin Schedule</button>
-                                    <button class="btn btn-style-1 btn-primary" type="button" onClick={goToClassSet}> Class Set </button>
-
+                            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                <div class="custom-control custom-checkbox d-block">
+                                    <input class="custom-control-input" type="checkbox" id="subscribe_me" checked=""></input>
+                                    <label class="custom-control-label" for="subscribe_me">Remember Me</label>
                                 </div>
+                                {/* <button class="btn btn-style-1 btn-primary" type="button" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Login</button> */}
+                                <button class="btn btn-style-1 btn-primary" type="button" onClick={goToAT}>Admin Schedule</button>
+
+                            </div>
                         </div>
                     </form>
                 </div>

@@ -1,16 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
+import conflictformat from '../images/conflict.png';
+
 import "../css/ClassSet.css";
 
 export const ClassSet = () => {
+
+    const [courses, setCourses] = useState([]);
+    const [fileFound, setFileFound] = useState(false);
+    const [fileUpload, setFileUpload] = useState(false);
+    const fileInputRef = useRef(null);
     const navigate = useNavigate();
 
     const goToProfile = () => {
         navigate('/Profile');
-      };
+    };
+    const goToAdmin = () => {
+        navigate('/AdminTable');
+    };
+
+    const handleFileSelect = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            handleFileUpload(file);
+        }
+    };
+
+    const handleFileUpload = async (file) => {
+        const formData = new FormData();
+        formData.append('file', file);
+        try {
+            const response = await fetch('http://localhost:5000/upload', {
+                method: 'POST',
+                body: formData,
+            });
+            if (!response.ok) throw new Error('Failed to upload file');
+            const result = await response.json();
+            setCourses(result.data)
+            setFileUpload(true)
+            console.log(result.message); // Process the response message as needed
+            console.log(result.data)
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
 
     return (
-        
+
         <div class="container bootstrap snippets bootdey">
             <section id="contact" class="gray-bg padding-top-bottom">
                 <div class="container bootstrap snippets bootdey">
@@ -20,30 +58,27 @@ export const ClassSet = () => {
                             <h1>Set Classes</h1>
 
                             <h5>Set classes that should not be in the same timetable</h5>
-
-                            <div class="form-group">
-                                <label class="control-label" for="Department">Name</label>
-                                <div class="controls">
-                                    <input id="Department" name="Department" placeholder="Department" class="form-control requiredField Highlighted-label" data-new-placeholder="Your name" type="text" data-error-empty="Please enter your name"></input>
-                                    <i class="fa fa-user"></i>
+                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                <h5>The format should be as shown below.</h5>
+                                <div>
+                                    <Nav>
+                                        <Nav.Item>
+                                            <Nav.Link onClick={() => fileInputRef.current && fileInputRef.current.click()}>
+                                                <button name="submit" type="submit" class="btn btn-info btn-block"> Input CSV </button>
+                                            </Nav.Link>
+                                        </Nav.Item>
+                                    </Nav>
+                                    <input
+                                        type="file"
+                                        style={{ display: 'none' }}
+                                        ref={fileInputRef}
+                                        onChange={handleFileSelect}
+                                    />
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="control-label" for="contact-mail">Email</label>
-                                <div class=" controls">
-                                    <input id="contact-mail" name="email" placeholder="Subject" class="form-control requiredField Highlighted-label" data-new-placeholder="Your email" type="email" data-error-empty="Please enter your email" data-error-invalid="Invalid email address"></input>
-                                    <i class="fa fa-envelope"></i>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="contact-message">Message</label>
-                                <div class="controls">
-                                    <textarea id="contact-message" name="comments" placeholder="Class Name - Ex) AMS 161" class="form-control requiredField Highlighted-label" data-new-placeholder="Your message" rows="6" data-error-empty="Please enter your message"></textarea>
-                                    <i class="fa fa-comment"></i>
-                                </div>
-                            </div>
-                            <p><button name="submit" type="submit" class="btn btn-info btn-block" onClick={goToProfile} >Set Classes</button></p>
+                            <img src={conflictformat} style={{ paddingBottom: '1em', height: "60vh" }} />
+                            <button class="btn btn-info btn-block" style={{ width: "30em" }} onClick={goToAdmin}>Back to table</button>
                             <input type="hidden" name="submitted" id="submitted" value="true"></input>
                         </form>
                     </div>
