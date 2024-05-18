@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import sbulogo from '../images/sbu.jpg';
 import "../css/TimeTable.css";
 
-export const TimeTable1 = () => {
+export const AdminTable = () => {
 
     const [department, setDepartment] = useState('AMS');
     const [year, setYear] = useState('24');
@@ -13,6 +13,8 @@ export const TimeTable1 = () => {
     const [courses, setCourses] = useState([]);
     const [message, setMessage] = useState('');
     const [fileFound, setFileFound] = useState(false);
+    const [fileUpload, setFileUpload] = useState(false);
+    const fileInputRef = useRef(null);
 
     useEffect(() => {
         handleCheckAndProcess();
@@ -48,6 +50,9 @@ export const TimeTable1 = () => {
     const goToMain = () => {
         navigate('/');
     };
+    const goToClassSet = () => {
+        navigate('/ClassSet');
+    };
     const goToAMS = () => {
         setDepartment('AMS')
     };
@@ -68,31 +73,69 @@ export const TimeTable1 = () => {
     };
     const goToFSC = () => {
         setDepartment('FSC')
-    }
-    const goTo24F = () => {
-        setYear('24')
-        setSemester('F')
     };
-    const goTo24S = () => {
-        setYear('24')
-        setSemester('S')
+
+    const handleFileSelect = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            handleFileUpload(file);
+        }
     };
-    const goTo23F = () => {
-        setYear('23')
-        setSemester('F')
+
+    const goToTheList = async () => {
+        try {
+            const departmentEncoded = encodeURIComponent(department);
+            const yearEncoded = encodeURIComponent(year);
+            const semesterEncoded = encodeURIComponent(semester);
+
+            const url = `http://localhost:5000/download-excel?department=${departmentEncoded}&year=${yearEncoded}&semester=${semesterEncoded}`;
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(courses) // 데이터를 JSON 형태로 전송
+            });
+
+            if (!response.ok) throw new Error('Failed to download file');
+
+            const blob = await response.blob();
+            const downloadUrl = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = downloadUrl;
+            link.setAttribute('download', `course_${year}_${semester}_${department}.xlsx`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } catch (error) {
+            console.error('Error:', error);
+        }
     };
-    const goTo23S = () => {
-        setYear('23')
-        setSemester('S')
-    };
-    const goTo22F = () => {
-        setYear('22')
-        setSemester('F')
+
+
+    const handleFileUpload = async (file) => {
+        const formData = new FormData();
+        formData.append('file', file);
+        try {
+            const response = await fetch('http://localhost:5000/upload', {
+                method: 'POST',
+                body: formData,
+            });
+            if (!response.ok) throw new Error('Failed to upload file');
+            const result = await response.json();
+            setCourses(result.data)
+            setFileUpload(true)
+            console.log(result.message); // Process the response message as needed
+            console.log(result.data)
+        } catch (error) {
+            console.error('Error:', error);
+        }
     };
 
     const CourseDisplay = function ({ inputdays, inputtime, inputreci }) {
         // inputdays = "MW, TUTH, F", inputtime = "9:00 AM", inputreci = "RECM, RECTU, RECW, RECTH, RECF", inputday2 = "M, TU, W, TU, F"
-        // const textToColor = (nuSubj    //     num = (num * 1234567) % 999999;
+        // const numberToColor = (num) => {
+        //     num = (num * 1234567) % 999999;
         //     return '#' + String(num).padStart(6, '0');
         // }
         const textToColor = (text) => {
@@ -122,14 +165,46 @@ export const TimeTable1 = () => {
             return '#' + r + g + b;
         }
 
+        // return (
+        //     <div className="course-display" style={{ backgroundColor: '#f0f1f3' }}>
+        //         {courses.filter(course => course.Days === inputdays && course['Start Time'] === inputtime).map((course, index) => (
+        //             course.Days === inputdays && course['Start Time'] === inputtime && (
+        //                 <div className="detail-course" draggable="true" key={index} style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+        //                     <div className="course-number">{course.Subj} {course.CRS}</div>
+        //                     <div className="room-number">{course.Room}</div>
+        //                     <div className="hover" style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])), maxWidth: '150%', height: '140%' }}>
+        //                         <div className="course-number">{course.Subj} {course.CRS}</div>
+        //                         <div>{course['Course Title']}</div>
+        //                         <div className="professor-name">{course.Instructor}</div>
+        //                         <div className="room-number">{course.Room}</div>
+        //                     </div>
+        //                 </div>
+        //             )
+        //         ))}
+        //         {courses.filter(course => course['Cmp'] === "REC").map((course, index) => (
+        //             course['Cmp'] === "REC" && course.Days === inputreci && course['Start Time'] === inputtime && (
+        //                 <div className="detail-course reci-class" draggable="true" key={index} style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+        //                     <div className="course-number">{course.Subj} {course.CRS}</div>
+        //                     <div className="room-number">{course.Room}</div>
+        //                     <div className="hover" style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+        //                         <div className="course-number">{course.Subj} {course.CRS}</div>
+        //                         <div>{course['Course Title']}</div>
+        //                         <div className="professor-name">{course.Instructor}</div>
+        //                         <div className="room-number">{course.Room}</div>
+        //                     </div>
+        //                 </div>
+        //             )
+        //         ))}
+        //     </div>
+        // );
         return (
             <div className="course-display" style={{ backgroundColor: '#f0f1f3' }}>
                 {courses.filter(course => course.Days === inputdays && course['Start Time'] === inputtime).map((course, index) => (
                     course.Days === inputdays && course['Start Time'] === inputtime && (
-                        <div className="detail-course" draggable="true" key={index} style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+                        <div className={`detail-course ${course.Subj}`} draggable="true" key={index} style={{ color: 'rgb(50, 50, 50)' }}>
                             <div className="course-number">{course.Subj} {course.CRS}</div>
                             <div className="room-number">{course.Room}</div>
-                            <div className="hover" style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+                            <div className={`hover ${course.Subj}`} style={{ maxWidth: '150%', height: '140%', zIndex: '99' }}>
                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                 <div>{course['Course Title']}</div>
                                 <div className="professor-name">{course.Instructor}</div>
@@ -140,10 +215,10 @@ export const TimeTable1 = () => {
                 ))}
                 {courses.filter(course => course['Cmp'] === "REC").map((course, index) => (
                     course['Cmp'] === "REC" && course.Days === inputreci && course['Start Time'] === inputtime && (
-                        <div className="detail-course reci-class" draggable="true" key={index} style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+                        <div className={`detail-course reci-class ${course.Subj}`} draggable="true" key={index}>
                             <div className="course-number">{course.Subj} {course.CRS}</div>
                             <div className="room-number">{course.Room}</div>
-                            <div className="hover" style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+                            <div className={`hover ${course.Subj}`} style={{ maxWidth: '150%', height: '140%' }}>
                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                 <div>{course['Course Title']}</div>
                                 <div className="professor-name">{course.Instructor}</div>
@@ -155,14 +230,34 @@ export const TimeTable1 = () => {
             </div>
         );
     }
-
     return (
-        <div className="container" style={{ marginLeft: '8em', marginTop: '0em' }}>
+        <div className="container" style={{ marginLeft: '10em', marginTop: '0em' }}>
             <img src={sbulogo} className="sbulogo" />
             <div className="w-95 w-md-75 w-lg-60 w-xl-55 mx-auto mb-6 text-center " style={{ paddingTop: '1em', paddingBottom: '0.5em' }}>
                 <Nav className="justify-content-end" activeKey="/home">
                     <Nav.Item>
                         <Nav.Link onClick={goToMain}>Home</Nav.Link>
+                    </Nav.Item>
+                    <div>
+                        <Nav className="justify-content-end" activeKey="/home">
+                            <Nav.Item>
+                                <Nav.Link onClick={() => fileInputRef.current && fileInputRef.current.click()}>
+                                    Input CSV
+                                </Nav.Link>
+                            </Nav.Item>
+                        </Nav>
+                        <input
+                            type="file"
+                            style={{ display: 'none' }}
+                            ref={fileInputRef}
+                            onChange={handleFileSelect}
+                        />
+                    </div>
+                    <Nav.Item>
+                        <Nav.Link onClick={goToTheList}>Download csv</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link onClick={goToClassSet}>Class Set</Nav.Link>
                     </Nav.Item>
                     <NavDropdown title="Department" id="nav-dropdown">
                         <NavDropdown.Item onClick={goToAMS}>AMS</NavDropdown.Item>
@@ -173,15 +268,8 @@ export const TimeTable1 = () => {
                         <NavDropdown.Item onClick={goToTSM}>TSM</NavDropdown.Item>
                         <NavDropdown.Item onClick={goToFSC}>FSC</NavDropdown.Item>
                     </NavDropdown>
-                    <NavDropdown title="Semester" id="nav-dropdown">
-                        <NavDropdown.Item onClick={goTo24F}>2024F</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goTo24S}>2024S</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goTo23F}>2023F</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goTo23S}>2023S</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goTo22F}>2022F</NavDropdown.Item>
-                    </NavDropdown>
                 </Nav>
-                <h2 className="display-18 display-md-16 display-lg-14 mb-0">Time Table {!fileFound && " Not Updated"} ({department}) ({year}{semester})</h2>
+                <h2 className="display-18 display-md-16 display-lg-14 mb-0">Admin Time Table ({department})</h2>
             </div>
             <div className="row">
                 <div className="col-md-15" style={{ marginTop: '1.5%' }}>
@@ -357,7 +445,7 @@ export const TimeTable1 = () => {
     );
 };
 
-export default TimeTable1;
+export default AdminTable;
 
 
-// 호버 변경 전 코드 
+// Admin Table 업데이트 전
