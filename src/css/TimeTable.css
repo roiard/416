@@ -125,43 +125,55 @@ body {
   transition: all 0.3s linear 0s;
 }
 
+/* Increase the height and width of the hover block */
+.detail-course .hover {
+  width: 200%;
+  /* 크기를 크게 조정 */
+  height: auto;
+  /* 높이를 자동으로 조정 */
+  max-height: none;
+  /* 최대 높이 설정 해제 */
+}
+
+/* Ensure the hover block is positioned above other elements */
+.detail-course:hover .hover {
+  z-index: 999;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Adjust padding and margin for better visibility */
+.detail-course {
+  padding: 10px;
+  overflow: visible;
+  /* 부모 요소의 overflow를 visible로 설정 */
+}
+
+.course-display .detail-course .hover {
+  padding: 20px;
+}
+
+/* Prevent the hover block from overlapping the text below */
+.detail-course .hover {
+  top: -150%;
+  /* 블록을 위로 이동 */
+  left: 0;
+  /* 블록을 왼쪽으로 이동 */
+  transform: translateY(-50%);
+  /* 수직 중심으로 이동 */
+}
+
 .schedule-table table tbody td .hover {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 100%;
-  height: 115%;
   transform: translate(-50%, -50%) scale(0.8);
   z-index: 999;
   background: #86d4f5;
   border-radius: 0.25rem;
-  padding: 25px 0;
   visibility: hidden;
   opacity: 0;
   transition: all 0.3s linear 0s;
-}
-
-/* .schedule-table table tbody td .hover {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 40vh;
-  height: 20vh;
-  transform: translate(-50%, -50%) scale(0.8);
-  z-index: 99;
-  background: #86d4f5;
-  border-radius: 0.25rem;
-  padding: 25px 0;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.3s linear 0s;
-  overflow: auto;
-} */
-
-.schedule-table table tbody td.active:hover .hover {
-  transform: translate(-50%, -50%) scale(1);
-  visibility: visible;
-  opacity: 1;
 }
 
 .schedule-table table tbody td.day:hover {
@@ -267,7 +279,6 @@ body {
   flex-direction: row;
   align-items: center;
   height: 9em;
-  /* width: 20em; */
 }
 
 .detail-course {
@@ -275,10 +286,10 @@ body {
   padding: 15px;
   border-radius: 5%;
   background-color: aqua;
-  /* background-color: #636931; */
   color: #d3edf8;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .course-number {
@@ -303,15 +314,19 @@ body {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
 }
 
 .no-class {
-  /* background-color: #f0f1f3; */
   width: 100%;
   height: 100%;
 }
 
 .reci-class {
   background-color: rgb(253, 183, 183);
-  height: 5.5em;
+  height: 7em;
 }

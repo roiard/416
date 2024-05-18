@@ -129,7 +129,7 @@ export const TimeTable1 = () => {
                         <div className="detail-course" draggable="true" key={index} style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
                             <div className="course-number">{course.Subj} {course.CRS}</div>
                             <div className="room-number">{course.Room}</div>
-                            <div className="hover" style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+                            <div className="hover" style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])), maxWidth: '150%', height: '140%' }}>
                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                 <div>{course['Course Title']}</div>
                                 <div className="professor-name">{course.Instructor}</div>

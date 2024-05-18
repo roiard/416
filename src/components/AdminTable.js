@@ -169,7 +169,7 @@ export const AdminTable = () => {
                         <div className="detail-course" draggable="true" key={index} style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
                             <div className="course-number">{course.Subj} {course.CRS}</div>
                             <div className="room-number">{course.Room}</div>
-                            <div className="hover" style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+                            <div className="hover" style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])), maxWidth: '150%', height: '140%' }}>
                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                 <div>{course['Course Title']}</div>
                                 <div className="professor-name">{course.Instructor}</div>
@@ -195,7 +195,6 @@ export const AdminTable = () => {
             </div>
         );
     }
-
     return (
         <div className="container" style={{ marginLeft: '10em', marginTop: '0em' }}>
             <img src={sbulogo} className="sbulogo" />
