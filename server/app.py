@@ -182,16 +182,33 @@ def check_and_process_file():
 @app.route('/login', methods=['POST'])
 @cross_origin(origin='localhost', headers=['Content- Type', 'Authorization'])
 
+# def login():
+#     user_data = request.get_json()
+#     username = user_data.get('username')
+#     password = user_data.get('password')
+
+#     if username == 'admin@gmail.com' and password == 'password':
+#         return jsonify({"message": "Login successful", "status": "success"}), 200
+#     else:
+#         return jsonify({"message": "Invalid credentials", "status": "fail"}), 401
+
 def login():
     user_data = request.get_json()
     username = user_data.get('username')
     password = user_data.get('password')
+    users = {
+        'ams@ams': 'ams',
+        'bm@bm': 'bm',
+        'cs@cs': 'cs',
+        'ece@ece': 'ece',
+        'mec@mec': 'mec',
+        'tsm@tsm': 'tsm',
+    }
 
-    if username == 'admin@gmail.com' and password == 'password':
+    if username in users and password == users[username]:
         return jsonify({"message": "Login successful", "status": "success"}), 200
     else:
         return jsonify({"message": "Invalid credentials", "status": "fail"}), 401
-    
 
 @app.route('/courses', methods=['GET'])
 def get_data():

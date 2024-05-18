@@ -26,7 +26,7 @@ export const Login = () => {
             const data = await response.json();
 
             if (data.status === 'success') {
-                navigate('/Profile');
+                navigate('/AdminTable');
             } else {
                 alert('Invalid credentials');
             }
