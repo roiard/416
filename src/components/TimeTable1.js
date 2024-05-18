@@ -161,7 +161,7 @@ export const TimeTable1 = () => {
                         <div className={`detail-course ${course.Subj}`} draggable="true" key={index} style={{ color: 'rgb(50, 50, 50)' }}>
                             <div className="course-number">{course.Subj} {course.CRS}</div>
                             <div className="room-number">{course.Room}</div>
-                            <div className={`hover ${course.Subj}`} style={{ maxWidth: '150%', height: '140%' }}>
+                            <div className={`hover ${course.Subj}`} style={{ maxWidth: '150%', height: '140%', zIndex: '99' }}>
                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                 <div>{course['Course Title']}</div>
                                 <div className="professor-name">{course.Instructor}</div>

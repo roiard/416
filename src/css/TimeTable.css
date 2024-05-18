@@ -302,6 +302,7 @@ body {
 }
 
 .detail-course:hover .hover {
+  position: absolute;
   visibility: visible;
   opacity: 1;
   z-index: 99;
