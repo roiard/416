@@ -121,6 +121,7 @@ export const TimeTable1 = () => {
             b = b.toString(16).padStart(2, '0');
             return '#' + r + g + b;
         }
+
         return (
             <div className="course-display" style={{ backgroundColor: '#f0f1f3' }}>
                 {courses.filter(course => course.Days === inputdays && course['Start Time'] === inputtime).map((course, index) => (
