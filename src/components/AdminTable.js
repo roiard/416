@@ -165,14 +165,46 @@ export const AdminTable = () => {
             return '#' + r + g + b;
         }
 
+        // return (
+        //     <div className="course-display" style={{ backgroundColor: '#f0f1f3' }}>
+        //         {courses.filter(course => course.Days === inputdays && course['Start Time'] === inputtime).map((course, index) => (
+        //             course.Days === inputdays && course['Start Time'] === inputtime && (
+        //                 <div className="detail-course" draggable="true" key={index} style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+        //                     <div className="course-number">{course.Subj} {course.CRS}</div>
+        //                     <div className="room-number">{course.Room}</div>
+        //                     <div className="hover" style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])), maxWidth: '150%', height: '140%' }}>
+        //                         <div className="course-number">{course.Subj} {course.CRS}</div>
+        //                         <div>{course['Course Title']}</div>
+        //                         <div className="professor-name">{course.Instructor}</div>
+        //                         <div className="room-number">{course.Room}</div>
+        //                     </div>
+        //                 </div>
+        //             )
+        //         ))}
+        //         {courses.filter(course => course['Cmp'] === "REC").map((course, index) => (
+        //             course['Cmp'] === "REC" && course.Days === inputreci && course['Start Time'] === inputtime && (
+        //                 <div className="detail-course reci-class" draggable="true" key={index} style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+        //                     <div className="course-number">{course.Subj} {course.CRS}</div>
+        //                     <div className="room-number">{course.Room}</div>
+        //                     <div className="hover" style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+        //                         <div className="course-number">{course.Subj} {course.CRS}</div>
+        //                         <div>{course['Course Title']}</div>
+        //                         <div className="professor-name">{course.Instructor}</div>
+        //                         <div className="room-number">{course.Room}</div>
+        //                     </div>
+        //                 </div>
+        //             )
+        //         ))}
+        //     </div>
+        // );
         return (
             <div className="course-display" style={{ backgroundColor: '#f0f1f3' }}>
                 {courses.filter(course => course.Days === inputdays && course['Start Time'] === inputtime).map((course, index) => (
                     course.Days === inputdays && course['Start Time'] === inputtime && (
-                        <div className="detail-course" draggable="true" key={index} style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+                        <div className={`detail-course ${course.Subj}`} draggable="true" key={index} style={{ color: 'rgb(50, 50, 50)' }}>
                             <div className="course-number">{course.Subj} {course.CRS}</div>
                             <div className="room-number">{course.Room}</div>
-                            <div className="hover" style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])), maxWidth: '150%', height: '140%' }}>
+                            <div className={`hover ${course.Subj}`} style={{ maxWidth: '150%', height: '140%', zIndex: '99' }}>
                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                 <div>{course['Course Title']}</div>
                                 <div className="professor-name">{course.Instructor}</div>
@@ -183,10 +215,10 @@ export const AdminTable = () => {
                 ))}
                 {courses.filter(course => course['Cmp'] === "REC").map((course, index) => (
                     course['Cmp'] === "REC" && course.Days === inputreci && course['Start Time'] === inputtime && (
-                        <div className="detail-course reci-class" draggable="true" key={index} style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+                        <div className={`detail-course reci-class ${course.Subj}`} draggable="true" key={index}>
                             <div className="course-number">{course.Subj} {course.CRS}</div>
                             <div className="room-number">{course.Room}</div>
-                            <div className="hover" style={{ backgroundColor: textToColor(course['Subj']), color: findComplementary(textToColor(course['Subj'])) }}>
+                            <div className={`hover ${course.Subj}`} style={{ maxWidth: '150%', height: '140%' }}>
                                 <div className="course-number">{course.Subj} {course.CRS}</div>
                                 <div>{course['Course Title']}</div>
                                 <div className="professor-name">{course.Instructor}</div>
