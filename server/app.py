@@ -89,6 +89,7 @@ def show_data(path):
     df = pd.read_excel(path, sheet_name=0)
 
     df.fillna(method='ffill', inplace=True)
+    df['SBC'] = df['SBC'].fillna(' ')
     df['End Time'] = pd.to_datetime(df['End Time'].astype('string')).dt.strftime('%I:%M %p').str.lstrip('0')
     df['Start Time'] = pd.to_datetime(df['Start Time'].astype('string')).dt.strftime('%I:%M %p').str.lstrip('0')
     global processed_data
@@ -132,7 +133,7 @@ def process_and_store_data(path):
     df['Start Time'] = time_slots
 
     df['End Time'] = df.apply(calculate_end_time, axis=1)
-        
+    df['SBC'] = df['SBC'].fillna(' ')
     global processed_data
     processed_data = df.to_dict(orient='records')
 

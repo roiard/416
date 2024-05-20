@@ -7,7 +7,7 @@ import "../css/TimeTable.css";
 
 export const TimeTable1 = () => {
 
-    const [department, setDepartment] = useState('AMS');
+    const [departments, setDepartments] = useState(['AMS']);
     const [year, setYear] = useState('24');
     const [semester, setSemester] = useState('F');
     const [courses, setCourses] = useState([]);
@@ -16,31 +16,32 @@ export const TimeTable1 = () => {
 
     useEffect(() => {
         handleCheckAndProcess();
-    }, [semester, year, department]);
+    }, [semester, year, departments]);
 
     const handleCheckAndProcess = async () => {
+        let allCourses = [];
+        let messages = [];
 
-        const url = 'http://localhost:5000/check-and-process?department=' + department + '&year=' + year + '&semester=' + semester
-        try {
-            const response = await fetch(url);
-
-            if (!response.ok) {
-                setCourses([])
+        for (const department of departments) {
+            const url = `http://localhost:5000/check-and-process?department=${department}&year=${year}&semester=${semester}`;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                allCourses = [...allCourses, ...data.data];
+                messages.push(data.message);
+                setFileFound(true);
+            } catch (error) {
+                console.error('Error:', error);
+                setMessage('Error fetching data');
                 setFileFound(false);
-                throw new Error('Network response was not ok');
             }
-
-            const data = await response.json();
-            setCourses(data.data);
-            setMessage(data.message);
-            setFileFound(true);
-            console.log('Data:', data.data);
-            console.log(data.message)
-            console.log(semester)
-        } catch (error) {
-            console.error('Error:', error);
-            setMessage('Error fetching data');
         }
+
+        setCourses(allCourses);
+        setMessage(messages.join(', '));
     };
 
     const navigate = useNavigate();
@@ -48,46 +49,20 @@ export const TimeTable1 = () => {
     const goToMain = () => {
         navigate('/');
     };
-    const goToAMS = () => {
-        setDepartment('AMS')
+
+    const handleDepartmentChange = (e) => {
+        const value = e.target.value;
+        if (departments.includes(value)) {
+            setDepartments(departments.filter(dep => dep !== value));
+        } else if (departments.length < 2) {
+            setDepartments([...departments, value]);
+        }
     };
-    const goToBM = () => {
-        setDepartment('BM')
-    };
-    const goToCS = () => {
-        setDepartment('CSE')
-    };
-    const goToECE = () => {
-        setDepartment('ECE')
-    };
-    const goToMEC = () => {
-        setDepartment('MEC')
-    };
-    const goToTSM = () => {
-        setDepartment('TSM')
-    };
-    const goToFSC = () => {
-        setDepartment('FSC')
-    }
-    const goTo24F = () => {
-        setYear('24')
-        setSemester('F')
-    };
-    const goTo24S = () => {
-        setYear('24')
-        setSemester('S')
-    };
-    const goTo23F = () => {
-        setYear('23')
-        setSemester('F')
-    };
-    const goTo23S = () => {
-        setYear('23')
-        setSemester('S')
-    };
-    const goTo22F = () => {
-        setYear('22')
-        setSemester('F')
+
+    const handleSemesterChange = (e) => {
+        const [year, semester] = e.target.value.split('-');
+        setYear(year);
+        setSemester(semester);
     };
 
     const CourseDisplay = function ({ inputdays, inputtime, inputreci }) {
@@ -122,6 +97,7 @@ export const TimeTable1 = () => {
             return '#' + r + g + b;
         }
 
+        // 색 설정
         // return (
         //     <div className="course-display" style={{ backgroundColor: '#f0f1f3' }}>
         //         {courses.filter(course => course.Days === inputdays && course['Start Time'] === inputtime).map((course, index) => (
@@ -197,23 +173,58 @@ export const TimeTable1 = () => {
                         <Nav.Link onClick={goToMain}>Home</Nav.Link>
                     </Nav.Item>
                     <NavDropdown title="Department" id="nav-dropdown">
-                        <NavDropdown.Item onClick={goToAMS}>AMS</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToBM}>BM</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToCS}>CS</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToECE}>ECE</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToMEC}>MEC</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToTSM}>TSM</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goToFSC}>FSC</NavDropdown.Item>
+                        <div className="dropdown-item">
+                            <label>
+                                <input type="checkbox" value="AMS" checked={departments.includes("AMS")} onChange={handleDepartmentChange} />
+                                AMS
+                            </label>
+                        </div>
+                        <div className="dropdown-item">
+                            <label>
+                                <input type="checkbox" value="BM" checked={departments.includes("BM")} onChange={handleDepartmentChange} />
+                                BM
+                            </label>
+                        </div>
+                        <div className="dropdown-item">
+                            <label>
+                                <input type="checkbox" value="CSE" checked={departments.includes("CSE")} onChange={handleDepartmentChange} />
+                                CSE
+                            </label>
+                        </div>
+                        <div className="dropdown-item">
+                            <label>
+                                <input type="checkbox" value="ECE" checked={departments.includes("ECE")} onChange={handleDepartmentChange} />
+                                ECE
+                            </label>
+                        </div>
+                        <div className="dropdown-item">
+                            <label>
+                                <input type="checkbox" value="MEC" checked={departments.includes("MEC")} onChange={handleDepartmentChange} />
+                                MEC
+                            </label>
+                        </div>
+                        <div className="dropdown-item">
+                            <label>
+                                <input type="checkbox" value="TSM" checked={departments.includes("TSM")} onChange={handleDepartmentChange} />
+                                TSM
+                            </label>
+                        </div>
+                        <div className="dropdown-item">
+                            <label>
+                                <input type="checkbox" value="FSC" checked={departments.includes("FSC")} onChange={handleDepartmentChange} />
+                                FSC
+                            </label>
+                        </div>
                     </NavDropdown>
                     <NavDropdown title="Semester" id="nav-dropdown">
-                        <NavDropdown.Item onClick={goTo24F}>2024F</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goTo24S}>2024S</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goTo23F}>2023F</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goTo23S}>2023S</NavDropdown.Item>
-                        <NavDropdown.Item onClick={goTo22F}>2022F</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => handleSemesterChange({ target: { value: '24-F' } })}>2024F</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => handleSemesterChange({ target: { value: '24-S' } })}>2024S</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => handleSemesterChange({ target: { value: '23-F' } })}>2023F</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => handleSemesterChange({ target: { value: '23-S' } })}>2023S</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => handleSemesterChange({ target: { value: '22-F' } })}>2022F</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
-                <h2 className="display-18 display-md-16 display-lg-14 mb-0">Time Table {!fileFound && " Not Updated"} ({department}) ({year}{semester})</h2>
+                <h2 className="display-18 display-md-16 display-lg-14 mb-0">Time Table {!fileFound && " Not Updated"} ({departments.join(', ')}) ({year}{semester})</h2>
             </div>
             <div className="row">
                 <div className="col-md-15" style={{ marginTop: '1.5%' }}>
