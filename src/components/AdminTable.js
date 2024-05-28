@@ -112,6 +112,34 @@ export const AdminTable = () => {
         }
     };
 
+    const goToTheAllList = async () => {
+        try {
+            const yearEncoded = encodeURIComponent(year);
+            const semesterEncoded = encodeURIComponent(semester);
+
+            const url = `http://localhost:5000/download-excel-all?year=${yearEncoded}&semester=${semesterEncoded}`;
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(courses) // 데이터를 JSON 형태로 전송
+            });
+
+            if (!response.ok) throw new Error('Failed to download file');
+
+            const blob = await response.blob();
+            const downloadUrl = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = downloadUrl;
+            link.setAttribute('download', `course_${year}_${semester}.xlsx`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
 
     const handleFileUpload = async (file) => {
         const formData = new FormData();
@@ -254,7 +282,10 @@ export const AdminTable = () => {
                         />
                     </div>
                     <Nav.Item>
-                        <Nav.Link onClick={goToTheList}>Download csv</Nav.Link>
+                        <Nav.Link onClick={goToTheList}>Save and Download csv</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link onClick={goToTheAllList}>Download All</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link onClick={goToClassSet}>Class Set</Nav.Link>
